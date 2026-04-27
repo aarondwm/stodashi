@@ -1,80 +1,286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mandate &mdash; Stodashi</title>
-  <meta name="description" content="Stodashi engineers original platforms for institutions and acquires established software businesses to operate indefinitely." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mandate &mdash; stodashi</title>
+  <meta name="description" content="A mandate in two halves: build original platforms, and hold mature software businesses indefinitely." />
+  <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/public/stodashi-logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --obsidian: #0A0A0B;
+      --graphite: #1A1A1C;
+      --bone: #F2F0E8;
+      --ash: #8C8C8F;
+      --iron: #2A2A2D;
+      --oxblood: #791F1F;
+
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--obsidian);
+      color: var(--bone);
+      font-family: var(--font-display);
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 48px 64px 32px;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 120ms ease; }
+
+    /* Header ---------------------------------------------------------------- */
+    header.site {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 64px;
+    }
+
+    .lockup { display: inline-flex; align-items: center; gap: 12px; }
+    .lockup-mark { width: 32px; height: 32px; display: block; }
+    .lockup-text { font-size: 17px; letter-spacing: -0.005em; color: var(--bone); }
+
+    .stamp {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ash);
+      text-align: right;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+
+    /* Section meta ---------------------------------------------------------- */
+    .section-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ash);
+      letter-spacing: 0.14em;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--iron);
+      margin-bottom: 56px;
+      text-transform: uppercase;
+    }
+    .section-meta .label { color: var(--bone); }
+
+    /* Page title ------------------------------------------------------------ */
+    h1.title {
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.022em;
+      color: var(--bone);
+      max-width: 22ch;
+      margin: 0 0 64px;
+      font-weight: 400;
+    }
+
+    /* Body ------------------------------------------------------------------ */
+    main { flex: 1; }
+
+    .blocks {
+      display: grid;
+      gap: 56px;
+      max-width: 880px;
+    }
+
+    .block {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .block-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ash);
+      padding-top: 6px;
+    }
+
+    .block h2 {
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.018em;
+      color: var(--bone);
+      margin: 0 0 16px;
+      font-weight: 400;
+    }
+
+    .block p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--bone);
+      max-width: 60ch;
+      margin: 0;
+    }
+
+    /* Index footer ---------------------------------------------------------- */
+    .index {
+      border-top: 1px solid var(--iron);
+      padding-top: 24px;
+      margin-top: 96px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .index-item {
+      padding: 0 20px;
+      border-right: 1px solid var(--iron);
+    }
+    .index-item:first-child { padding-left: 0; }
+    .index-item:last-child { padding-right: 0; border-right: none; }
+
+    .index-item a, .index-item .static { display: block; }
+    .index-item.current .static { cursor: default; }
+
+    .index-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ash);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .index-item.current .index-num { color: var(--bone); }
+
+    .index-title {
+      font-size: 14px;
+      color: var(--bone);
+      letter-spacing: -0.005em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .index-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ash);
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    .index-item a:hover .index-num { color: var(--bone); }
+
+    @media (max-width: 720px) {
+      body { padding: 32px 24px; }
+      header.site { margin-bottom: 48px; }
+      h1.title { font-size: 26px; }
+      .block { grid-template-columns: 1fr; gap: 12px; }
+      .block-label { padding-top: 0; }
+      .index {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 0;
+        margin-top: 64px;
+      }
+      .index-item:nth-child(2) { border-right: none; padding-right: 0; }
+      .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
+      .index-item:nth-child(4) { padding-right: 0; border-right: none; }
+    }
+
+    @media (max-width: 420px) {
+      .index { grid-template-columns: 1fr; }
+      .index-item {
+        padding: 16px 0;
+        border-right: none !important;
+        border-bottom: 1px solid var(--iron);
+      }
+      .index-item:last-child { border-bottom: none; }
+    }
+  </style>
 </head>
-<body data-page="mandate">
-  <header class="site-header">
-    <div class="frame site-header-inner">
-      <a href="index.html" class="wordmark" aria-label="Stodashi, home">
-        <img src="/public/stodashi-logo.png" alt="" class="mark" width="28" height="28" />
-        <span>stodashi</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="mandate.html" aria-current="page"><span class="num">01</span> Mandate</a>
-        <a href="approach.html"><span class="num">02</span> Approach</a>
-        <a href="contact.html"><span class="num">03</span> Contact</a>
-      </nav>
+<body>
+  <header class="site">
+    <a href="index.html" class="lockup" aria-label="Stodashi home">
+      <img src="/public/stodashi-logo.png" alt="" class="lockup-mark" width="32" height="32" />
+      <span class="lockup-text">stodashi</span>
+    </a>
+    <div class="stamp">
+      MMXXVI<br />
+      KUWAIT CITY
     </div>
   </header>
 
+  <div class="section-meta">
+    <span class="label">Mandate</span>
+    <span>01 / 04</span>
+  </div>
+
+  <h1 class="title">A mandate in two halves &mdash; build, and hold.</h1>
+
   <main>
-    <div class="frame">
-      <div class="page-meta fade fade-1">
-        <span class="title">Mandate</span>
-        <span>01 / 05</span>
-      </div>
+    <div class="blocks">
+      <article class="block">
+        <div class="block-label">Build</div>
+        <div>
+          <h2>Original platforms.</h2>
+          <p>We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Engagements are direct, scoped, and confidential. We do not publicise client work.</p>
+        </div>
+      </article>
 
-      <h1 class="section-title fade fade-2">A mandate in two halves &mdash; build, and hold.</h1>
-
-      <div class="mandate-grid">
-        <article class="mandate-block fade fade-3">
-          <div class="label">Build</div>
-          <div class="body">
-            <h2>Original platforms.</h2>
-            <p>We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Engagements are direct, scoped, and confidential. We do not publicise client work.</p>
-          </div>
-        </article>
-
-        <article class="mandate-block fade fade-4">
-          <div class="label">Hold</div>
-          <div class="body">
-            <h2>Indefinite stewardship.</h2>
-            <p>We acquire established software businesses operating in regulated and mission-critical industries. Our hold period is indefinite. We do not flip, recapitalise for exit, or break up what we own. We are not a fund.</p>
-          </div>
-        </article>
-      </div>
-
-      <nav class="pager fade fade-5" aria-label="Section pager">
-        <a href="approach.html" class="pager-link pager-next" data-pager-next>
-          <span class="mono-label">Next</span>
-          <span class="pager-title"><span class="num">02</span> Approach <span class="arrow" aria-hidden="true">&rarr;</span></span>
-        </a>
-      </nav>
+      <article class="block">
+        <div class="block-label">Hold</div>
+        <div>
+          <h2>Indefinite stewardship.</h2>
+          <p>We acquire established software businesses operating in regulated and mission-critical industries. Our hold period is indefinite. We do not flip, recapitalise for exit, or break up what we own. We are not a fund.</p>
+        </div>
+      </article>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="frame site-footer-inner">
-      <div class="footer-brand">stodashi</div>
-      <div class="footer-meta">
-        <span>MMXXVI</span>
-        <span class="sep">/</span>
-        <span>KWT</span>
-        <span class="sep">/</span>
-        <span class="status"><span class="dot" aria-hidden="true"></span> Operating</span>
+  <nav class="index" aria-label="Sections">
+    <div class="index-item current">
+      <div class="static">
+        <div class="index-num">01</div>
+        <span class="index-title">Mandate</span>
+        <div class="index-desc">Build and hold</div>
       </div>
-      <a href="legal.html" class="footer-legal">Legal</a>
     </div>
-  </footer>
-  <script src="pager.js" defer></script>
+    <div class="index-item">
+      <a href="approach.html">
+        <div class="index-num">02</div>
+        <span class="index-title">Approach</span>
+        <div class="index-desc">Long-hold operators</div>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="mailto:contact@stodashi.com">
+        <div class="index-num">03</div>
+        <span class="index-title">Contact</span>
+        <div class="index-desc">contact@stodashi.com</div>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="legal.html">
+        <div class="index-num">04</div>
+        <span class="index-title">Legal</span>
+        <div class="index-desc">Entity / jurisdiction</div>
+      </a>
+    </div>
+  </nav>
 </body>
 </html>
