@@ -11,6 +11,7 @@
   --ash: #8C8C8F;
   --iron: #2A2A2D;
   --signal: #C9A961;
+  --oxblood: #791F1F;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -74,6 +75,14 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.025em;
   color: var(--bone);
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.wordmark .mark {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 .nav {
@@ -129,8 +138,7 @@ a { color: inherit; text-decoration: none; }
   display: inline-block;
   width: 0.5em;
   height: 0.5em;
-  background: var(--signal);
-  transform: rotate(45deg);
+  background: var(--bone);
   position: relative;
   top: -0.05em;
 }

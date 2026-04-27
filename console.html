@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stodashi</title>
+  <meta name="description" content="Stodashi builds original platforms for institutions and acquires mature software businesses to operate indefinitely." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/png" href="/public/stodashi-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --obsidian: #0A0A0B;
+      --graphite: #1A1A1C;
+      --bone: #F2F0E8;
+      --ash: #8C8C8F;
+      --iron: #2A2A2D;
+      --oxblood: #791F1F;
+
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--obsidian);
+      color: var(--bone);
+      font-family: var(--font-display);
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 120ms ease; }
+    a:hover { color: var(--bone); }
+
+    /* Status strip ---------------------------------------------------------- */
+    .status {
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ash);
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--iron);
+    }
+
+    .status-left {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--bone);
+      display: inline-block;
+    }
+
+    /* Hero ------------------------------------------------------------------ */
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 220px 1px 1fr;
+      gap: 40px;
+      padding: 96px 32px;
+      align-items: start;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 4px;
+    }
+
+    .lockup-mark {
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+
+    .lockup-text {
+      font-size: 18px;
+      letter-spacing: -0.005em;
+      color: var(--bone);
+    }
+
+    .divider {
+      background: var(--iron);
+      width: 1px;
+      align-self: stretch;
+      min-height: 220px;
+    }
+
+    .statement {
+      font-size: 22px;
+      line-height: 1.45;
+      letter-spacing: -0.012em;
+      color: var(--bone);
+      max-width: 460px;
+      margin: 0;
+    }
+
+    /* Footer ---------------------------------------------------------------- */
+    footer {
+      border-top: 1px solid var(--iron);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ash);
+      letter-spacing: 0.08em;
+    }
+
+    .nav { display: flex; gap: 28px; }
+
+    @media (max-width: 720px) {
+      .status { padding: 12px 20px; flex-wrap: wrap; }
+      .status-left { gap: 16px; font-size: 10.5px; }
+      main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 56px 20px;
+      }
+      .divider { display: none; }
+      .lockup-mark { width: 36px; height: 36px; }
+      .statement { font-size: 18px; }
+      footer { padding: 14px 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+      .nav { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="status" role="status">
+    <div class="status-left">
+      <span class="status-indicator">
+        <span class="status-dot" aria-hidden="true"></span>
+        OPERATIONAL
+      </span>
+      <span>V.0.1.04</span>
+      <span>JX&mdash;KW.29</span>
+    </div>
+    <div id="timestamp">2026.04.27 / 14:22 AST</div>
+  </div>
+
+  <main>
+    <a href="/" class="lockup" aria-label="Stodashi home">
+      <img src="/public/stodashi-logo.png" alt="" class="lockup-mark" width="40" height="40" />
+      <span class="lockup-text">stodashi</span>
+    </a>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="statement">
+      Stodashi builds original platforms for institutions and acquires mature software businesses to operate indefinitely.
+    </p>
+  </main>
+
+  <footer>
+    <nav class="nav">
+      <a href="/mandate">MANDATE</a>
+      <a href="/approach">APPROACH</a>
+      <a href="mailto:contact@stodashi.com">CONTACT</a>
+      <a href="/legal">LEGAL</a>
+    </nav>
+    <span>&copy; STODASHI HOLDING CO.</span>
+  </footer>
+
+  <script>
+    // Live timestamp in AST (UTC+3)
+    (function () {
+      const el = document.getElementById('timestamp');
+      if (!el) return;
+      function tick() {
+        const now = new Date();
+        const ast = new Date(now.getTime() + (3 * 60 - now.getTimezoneOffset()) * 60000);
+        const y = ast.getUTCFullYear();
+        const m = String(ast.getUTCMonth() + 1).padStart(2, '0');
+        const d = String(ast.getUTCDate()).padStart(2, '0');
+        const hh = String(ast.getUTCHours()).padStart(2, '0');
+        const mm = String(ast.getUTCMinutes()).padStart(2, '0');
+        el.textContent = `${y}.${m}.${d} / ${hh}:${mm} AST`;
+      }
+      tick();
+      setInterval(tick, 30000);
+    })();
+  </script>
+</body>
+</html>
