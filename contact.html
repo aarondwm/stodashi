@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact &mdash; stodashi</title>
-  <meta name="description" content="Direct enquiries to contact@stodashi.com." />
+  <meta name="description" content="Stodashi Holding Co. correspondence and contact channels." />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/stodashi-logo.png" />
 
@@ -48,117 +48,133 @@
       padding: 48px 64px 32px;
     }
 
-    a { color: inherit; text-decoration: none; transition: color 120ms ease, border-color 120ms ease; }
+    a { color: inherit; text-decoration: none; transition: color 120ms ease; }
 
     /* Header ---------------------------------------------------------------- */
-    header.site {
+    header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 64px;
-    }
-    .lockup { display: inline-flex; align-items: center; gap: 12px; }
-    .lockup-mark { width: 32px; height: 32px; display: block; }
-    .lockup-text { font-size: 17px; letter-spacing: -0.005em; color: var(--bone); }
-    .stamp {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ash);
-      text-align: right;
-      letter-spacing: 0.04em;
-      line-height: 1.6;
-    }
-    .stamp a { color: inherit; transition: color 120ms ease; }
-    .stamp a:hover { color: var(--bone); }
-
-    /* Section meta ---------------------------------------------------------- */
-    .section-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.14em;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--iron);
-      margin-bottom: 56px;
-      text-transform: uppercase;
-    }
-    .section-meta .label { color: var(--bone); }
-
-    /* Body ------------------------------------------------------------------ */
-    main { flex: 1; }
-
-    .contact {
-      display: grid;
-      gap: 40px;
-      max-width: 720px;
+      align-items: center;
+      margin-bottom: 96px;
     }
 
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ash);
-      margin: 0;
+    .lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .email {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 44px;
-      line-height: 1.1;
-      letter-spacing: -0.022em;
+    .lockup-mark {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+
+    .lockup-text {
+      font-size: 16px;
+      letter-spacing: -0.005em;
       color: var(--bone);
-      border-bottom: 1px solid var(--iron);
-      padding-bottom: 16px;
-      display: inline-block;
     }
-    .email:hover { border-color: var(--bone); }
 
-    .coords {
+    .section-stamp {
       font-family: var(--font-mono);
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
       color: var(--ash);
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin: 0;
+      letter-spacing: 0.06em;
     }
-    .coords .sep { color: var(--iron); }
+
+    /* Main ------------------------------------------------------------------ */
+    main {
+      flex: 1;
+      max-width: 480px;
+      margin-bottom: 96px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ash);
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+    }
+
+    .address {
+      font-family: var(--font-display);
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.45;
+      letter-spacing: -0.012em;
+      color: var(--bone);
+      margin: 0 0 36px;
+    }
+
+    .address-divider {
+      border: none;
+      border-top: 1px solid var(--iron);
+      margin: 0 0 22px;
+    }
+
+    .channels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .channel-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ash);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .channel-value {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--bone);
+      letter-spacing: 0.02em;
+    }
+
+    a.channel-value:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
 
     .note {
-      font-size: 14px;
-      line-height: 1.65;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.6;
       color: var(--ash);
-      max-width: 52ch;
+      letter-spacing: 0.02em;
       margin: 0;
+      max-width: 380px;
     }
 
     /* Index footer ---------------------------------------------------------- */
     .index {
       border-top: 1px solid var(--iron);
       padding-top: 24px;
-      margin-top: 96px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
-    .index-item { padding: 0 20px; border-right: 1px solid var(--iron); }
+
+    .index-item {
+      padding: 0 20px;
+      border-right: 1px solid var(--iron);
+    }
     .index-item:first-child { padding-left: 0; }
     .index-item:last-child { padding-right: 0; border-right: none; }
-    .index-item a { display: block; }
+
     .index-num {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--ash);
       letter-spacing: 0.08em;
       margin-bottom: 8px;
-      transition: color 120ms ease;
     }
+
     .index-title {
       font-size: 13px;
       color: var(--ash);
@@ -166,25 +182,36 @@
       display: block;
       transition: color 120ms ease;
     }
-    .index-item a:hover .index-num,
-    .index-item a:hover .index-title { color: var(--bone); }
+
+    .index-item a:hover .index-title,
+    .index-item a:hover .index-num { color: var(--bone); }
+
+    /* Current page state */
     .index-item.current .index-num,
     .index-item.current .index-title { color: var(--bone); }
-    .index-item.current { pointer-events: none; }
 
-    @media (max-width: 720px) {
+    .index-item.current a[aria-current] {
+      pointer-events: none;
+    }
+
+    /* Responsive ------------------------------------------------------------ */
+    @media (max-width: 800px) {
       body { padding: 32px 24px; }
-      header.site { margin-bottom: 48px; }
-      .email { font-size: 28px; }
+      header { margin-bottom: 56px; }
+      main { margin-bottom: 56px; }
+      .address { font-size: 18px; }
       .index {
         grid-template-columns: 1fr 1fr;
         gap: 24px 0;
-        margin-top: 64px;
       }
       .index-item:nth-child(2) { border-right: none; padding-right: 0; }
       .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
-      .index-item:nth-child(4) { padding-right: 0; border-right: none; }
     }
+
+    @media (max-width: 480px) {
+      .channels { grid-template-columns: 1fr; gap: 18px; }
+    }
+
     @media (max-width: 420px) {
       .index { grid-template-columns: 1fr; }
       .index-item {
@@ -204,34 +231,40 @@
   </style>
 </head>
 <body>
-  <header class="site">
+  <header>
     <a href="index.html" class="lockup" aria-label="Stodashi home">
       <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="32" height="32" />
       <span class="lockup-text">stodashi</span>
     </a>
-    <div class="stamp">
-      Kuwait &mdash; global mandate.<br />
-      <a href="mailto:contact@stodashi.com">contact@stodashi.com</a>
-    </div>
+    <div class="section-stamp">CONTACT / 03</div>
   </header>
 
-  <div class="section-meta">
-    <span class="label">Contact</span>
-    <span>03 / 04</span>
-  </div>
-
   <main>
-    <section class="contact">
-      <p class="eyebrow">For institutional enquiries</p>
-      <a href="mailto:contact@stodashi.com" class="email">contact@stodashi.com</a>
-      <p class="coords">
-        <span>29.3759&deg; N</span>
-        <span class="sep">/</span>
-        <span>47.9774&deg; E</span>
-        <span class="sep">/</span>
-        <span>Kuwait City</span>
-      </p>
-      <p class="note">Correspondence is treated as confidential. We respond directly. Stodashi does not maintain an enquiry form, intake portal, or general enquiries line.</p>
+    <section aria-labelledby="correspondence-heading">
+      <h2 id="correspondence-heading" class="section-label">CORRESPONDENCE</h2>
+
+      <!-- TODO: replace with real registered address -->
+      <address class="address">
+        Stodashi Holding Co.<br />
+        Sharq, Block 5<br />
+        Kuwait City &mdash; State of Kuwait
+      </address>
+
+      <hr class="address-divider" />
+
+      <div class="channels">
+        <div class="channel">
+          <div class="channel-label">EMAIL</div>
+          <a href="mailto:contact@stodashi.com" class="channel-value">contact@stodashi.com</a>
+        </div>
+        <div class="channel">
+          <div class="channel-label">TELEPHONE</div>
+          <!-- TODO: replace placeholder with real number, then wrap in <a href="tel:+965XXXXXXXX"> -->
+          <span class="channel-value">+965 2XXX XXXX</span>
+        </div>
+      </div>
+
+      <p class="note">By appointment. We respond to correspondence we can act on.</p>
     </section>
   </main>
 
@@ -249,7 +282,7 @@
       </a>
     </div>
     <div class="index-item current">
-      <a href="mailto:contact@stodashi.com" aria-current="page">
+      <a href="contact.html" aria-current="page">
         <div class="index-num">03 &middot;</div>
         <span class="index-title">Contact</span>
       </a>
