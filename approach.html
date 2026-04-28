@@ -100,35 +100,36 @@
 
     /* Statements ------------------------------------------------------------ */
     .statements {
-      max-width: 880px;
+      max-width: 1000px;
       border-top: 1px solid var(--iron);
     }
     .statement {
       display: grid;
-      grid-template-columns: 60px 180px 1fr;
+      grid-template-columns: 80px 220px 1fr;
       gap: 32px;
-      padding: 24px 0;
+      padding: 32px 0;
       border-bottom: 1px solid var(--iron);
       align-items: baseline;
     }
     .statement .num {
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      color: var(--ash);
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      color: var(--bone);
     }
     .statement .heading {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--bone);
     }
     .statement .text {
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 22px;
+      line-height: 1.45;
+      letter-spacing: -0.012em;
       color: var(--bone);
-      max-width: 56ch;
+      max-width: 52ch;
       margin: 0;
     }
 
@@ -143,41 +144,38 @@
     .index-item { padding: 0 20px; border-right: 1px solid var(--iron); }
     .index-item:first-child { padding-left: 0; }
     .index-item:last-child { padding-right: 0; border-right: none; }
-    .index-item a, .index-item .static { display: block; }
-    .index-item.current .static { cursor: default; }
+    .index-item a { display: block; }
     .index-num {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--ash);
       letter-spacing: 0.08em;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      transition: color 120ms ease;
     }
-    .index-item.current .index-num { color: var(--bone); }
     .index-title {
-      font-size: 14px;
-      color: var(--bone);
-      letter-spacing: -0.005em;
-      margin-bottom: 6px;
-      display: block;
-    }
-    .index-desc {
-      font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ash);
-      line-height: 1.5;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.005em;
+      display: block;
+      transition: color 120ms ease;
     }
-    .index-item a:hover .index-num { color: var(--bone); }
+    .index-item a:hover .index-num,
+    .index-item a:hover .index-title { color: var(--bone); }
+    .index-item.current .index-num,
+    .index-item.current .index-title { color: var(--bone); }
+    .index-item.current { pointer-events: none; }
 
     @media (max-width: 720px) {
       body { padding: 32px 24px; }
       header.site { margin-bottom: 48px; }
       h1.title { font-size: 26px; }
       .statement {
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 60px 1fr;
         gap: 16px 16px;
+        padding: 24px 0;
       }
-      .statement .text { grid-column: 1 / -1; }
+      .statement .text { grid-column: 1 / -1; font-size: 18px; }
       .index {
         grid-template-columns: 1fr 1fr;
         gap: 24px 0;
@@ -222,7 +220,7 @@
     <span>02 / 04</span>
   </div>
 
-  <h1 class="title">Four principles. Held without exception.</h1>
+  <h1 class="title">Four principles. No exceptions.</h1>
 
   <main>
     <div class="statements">
@@ -254,28 +252,24 @@
       <a href="mandate.html">
         <div class="index-num">01</div>
         <span class="index-title">Mandate</span>
-        <div class="index-desc">Build and hold</div>
       </a>
     </div>
     <div class="index-item current">
-      <div class="static">
-        <div class="index-num">02</div>
+      <a href="approach.html" aria-current="page">
+        <div class="index-num">02 &middot;</div>
         <span class="index-title">Approach</span>
-        <div class="index-desc">Long-hold operators</div>
-      </div>
+      </a>
     </div>
     <div class="index-item">
       <a href="mailto:contact@stodashi.com">
         <div class="index-num">03</div>
         <span class="index-title">Contact</span>
-        <div class="index-desc">contact@stodashi.com</div>
       </a>
     </div>
     <div class="index-item">
       <a href="legal.html">
         <div class="index-num">04</div>
         <span class="index-title">Legal</span>
-        <div class="index-desc">Entity / jurisdiction</div>
       </a>
     </div>
   </nav>

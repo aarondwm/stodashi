@@ -155,31 +155,27 @@
     .index-item { padding: 0 20px; border-right: 1px solid var(--iron); }
     .index-item:first-child { padding-left: 0; }
     .index-item:last-child { padding-right: 0; border-right: none; }
-    .index-item a, .index-item .static { display: block; }
-    .index-item.current .static { cursor: default; }
+    .index-item a { display: block; }
     .index-num {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--ash);
       letter-spacing: 0.08em;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      transition: color 120ms ease;
     }
-    .index-item.current .index-num { color: var(--bone); }
     .index-title {
-      font-size: 14px;
-      color: var(--bone);
-      letter-spacing: -0.005em;
-      margin-bottom: 6px;
-      display: block;
-    }
-    .index-desc {
-      font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ash);
-      line-height: 1.5;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.005em;
+      display: block;
+      transition: color 120ms ease;
     }
-    .index-item a:hover .index-num { color: var(--bone); }
+    .index-item a:hover .index-num,
+    .index-item a:hover .index-title { color: var(--bone); }
+    .index-item.current .index-num,
+    .index-item.current .index-title { color: var(--bone); }
+    .index-item.current { pointer-events: none; }
 
     @media (max-width: 720px) {
       body { padding: 32px 24px; }
@@ -270,29 +266,25 @@
       <a href="mandate.html">
         <div class="index-num">01</div>
         <span class="index-title">Mandate</span>
-        <div class="index-desc">Build and hold</div>
       </a>
     </div>
     <div class="index-item">
       <a href="approach.html">
         <div class="index-num">02</div>
         <span class="index-title">Approach</span>
-        <div class="index-desc">Long-hold operators</div>
       </a>
     </div>
     <div class="index-item">
       <a href="mailto:contact@stodashi.com">
         <div class="index-num">03</div>
         <span class="index-title">Contact</span>
-        <div class="index-desc">contact@stodashi.com</div>
       </a>
     </div>
     <div class="index-item current">
-      <div class="static">
-        <div class="index-num">04</div>
+      <a href="legal.html" aria-current="page">
+        <div class="index-num">04 &middot;</div>
         <span class="index-title">Legal</span>
-        <div class="index-desc">Entity / jurisdiction</div>
-      </div>
+      </a>
     </div>
   </nav>
 </body>
