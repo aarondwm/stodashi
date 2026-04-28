@@ -165,8 +165,9 @@
 
     /* Page transition ------------------------------------------------------- */
     @view-transition { navigation: auto; }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1); }
     @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
-    body { animation: pageFadeIn 320ms cubic-bezier(0.2, 0.6, 0.2, 1); }
+    body { animation: pageFadeIn 200ms cubic-bezier(0.2, 0.6, 0.2, 1); }
     @supports (view-transition-name: none) { body { animation: none; } }
     @media (prefers-reduced-motion: reduce) { body { animation: none; } }
     .lockup-text .lockup-s { position: relative; display: inline-block; }

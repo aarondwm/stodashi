@@ -128,37 +128,36 @@
     .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      border-top: 1px solid var(--iron);
+      border-bottom: 1px solid var(--iron);
+      padding: 28px 0;
       margin-bottom: 40px;
     }
     .action {
-      background: var(--bone);
-      color: var(--obsidian);
-      border: 1px solid var(--bone);
-      padding: 24px 28px;
-      display: grid;
-      gap: 6px;
-      text-align: center;
-      transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
-    }
-    .action:hover {
-      background: var(--obsidian);
+      padding: 0 24px;
+      border-right: 1px solid var(--iron);
+      display: block;
       color: var(--bone);
+      transition: opacity 200ms ease;
     }
-    .action-eyebrow {
+    .action:first-child { padding-left: 0; }
+    .action:last-child { padding-right: 0; border-right: none; }
+    .action:hover { opacity: 0.55; }
+    .action-num {
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.55;
-      transition: opacity 200ms ease;
+      color: var(--bone);
+      margin-bottom: 10px;
+      display: block;
     }
-    .action:hover .action-eyebrow { opacity: 0.7; }
     .action-title {
       font-family: var(--font-display);
       font-size: 22px;
       letter-spacing: -0.018em;
       line-height: 1.1;
+      color: var(--bone);
+      display: block;
     }
 
     .channels {
@@ -278,8 +277,9 @@
 
     /* Page transition ------------------------------------------------------- */
     @view-transition { navigation: auto; }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1); }
     @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
-    body { animation: pageFadeIn 320ms cubic-bezier(0.2, 0.6, 0.2, 1); }
+    body { animation: pageFadeIn 200ms cubic-bezier(0.2, 0.6, 0.2, 1); }
     @supports (view-transition-name: none) { body { animation: none; } }
     @media (prefers-reduced-motion: reduce) { body { animation: none; } }
     .lockup-text .lockup-s { position: relative; display: inline-block; }
@@ -353,12 +353,12 @@
       <hr class="address-divider" />
 
       <div class="actions">
-        <a href="engage.html" class="action glass3d">
-          <span class="action-eyebrow">Engage</span>
+        <a href="engage.html" class="action">
+          <span class="action-num">01 &middot; Engage</span>
           <span class="action-title">Original build</span>
         </a>
-        <a href="divest.html" class="action glass3d">
-          <span class="action-eyebrow">Divest</span>
+        <a href="divest.html" class="action">
+          <span class="action-num">02 &middot; Divest</span>
           <span class="action-title">Sell to us</span>
         </a>
       </div>
