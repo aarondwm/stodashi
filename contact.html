@@ -284,39 +284,8 @@
     @media (prefers-reduced-motion: reduce) { body { animation: none; } }
     .lockup-text .lockup-s { position: relative; display: inline-block; }
     .lockup-text .lockup-s::before { content: ""; position: absolute; top: 0.32em; left: 50%; transform: translateX(-50%); width: 0.075em; height: 0.13em; background: currentColor; }
-
-    /* Inverted color scheme + right alignment ------------------------------- */
-    body { background: var(--bone); color: var(--obsidian); }
-    .lockup-text, .stamp, .stamp a, .section-stamp,
-    .address, .city, .channel-label, .channel-value, .note {
-      color: var(--obsidian);
-    }
-    .stamp a:hover { color: var(--obsidian); opacity: 0.7; }
-    .action {
-      background: var(--obsidian);
-      color: var(--bone);
-      border-color: var(--obsidian);
-    }
-    .action:hover {
-      background: var(--bone);
-      color: var(--obsidian);
-      border-color: var(--obsidian);
-    }
-    .index-num, .index-title {
-      color: var(--obsidian);
-      opacity: 0.55;
-    }
-    .index-item a:hover .index-num,
-    .index-item a:hover .index-title,
-    .index-item.current .index-num,
-    .index-item.current .index-title {
-      color: var(--obsidian);
-      opacity: 1;
-    }
-    ::selection { background: var(--obsidian); color: var(--bone); }
-
-    main { text-align: right; }
-    .action { text-align: center; }
+    /* Inverted palette */
+    body { --bone: #0A0A0B; --obsidian: #F2F0E8; --iron: #D6D4CD; }
   </style>
 </head>
 <body>
