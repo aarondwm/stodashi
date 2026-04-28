@@ -123,6 +123,42 @@
       margin: 0 0 32px;
     }
 
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .action {
+      background: var(--bone);
+      color: var(--obsidian);
+      border: 1px solid var(--bone);
+      padding: 24px 28px;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+    }
+    .action:hover {
+      background: var(--obsidian);
+      color: var(--bone);
+    }
+    .action-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      transition: opacity 200ms ease;
+    }
+    .action:hover .action-eyebrow { opacity: 0.7; }
+    .action-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: -0.018em;
+      line-height: 1.1;
+    }
+
     .channels {
       display: grid;
       grid-template-columns: 1fr;
@@ -225,6 +261,7 @@
 
     @media (max-width: 480px) {
       .channels { grid-template-columns: 1fr; gap: 18px; }
+      .actions { grid-template-columns: 1fr; gap: 12px; }
     }
 
     @media (max-width: 420px) {
@@ -262,6 +299,17 @@
       <p class="city">Kuwait City &mdash; State of Kuwait</p>
 
       <hr class="address-divider" />
+
+      <div class="actions">
+        <a href="engage.html" class="action">
+          <span class="action-eyebrow">Engage</span>
+          <span class="action-title">Original build</span>
+        </a>
+        <a href="divest.html" class="action">
+          <span class="action-eyebrow">Divest</span>
+          <span class="action-title">Sell to us</span>
+        </a>
+      </div>
 
       <div class="channels">
         <div class="channel">
