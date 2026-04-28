@@ -130,19 +130,29 @@
 
     .channel-label {
       font-family: var(--font-display);
-      font-size: 28px;
+      font-size: 40px;
       line-height: 1.1;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.022em;
       color: var(--bone);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .channel-value {
       font-family: var(--font-display);
-      font-size: 18px;
-      line-height: 1.5;
-      letter-spacing: -0.01em;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: -0.018em;
       color: var(--bone);
+    }
+
+    .note {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ash);
+      letter-spacing: 0.02em;
+      margin: 36px 0 0;
+      max-width: 56ch;
     }
 
     a.channel-value:hover {
@@ -209,8 +219,9 @@
       body { padding: 32px 24px; }
       header { margin-bottom: 48px; }
       .address { font-size: 36px; }
-      .channel-label { font-size: 22px; }
-      .channel-value { font-size: 16px; }
+      .channel-label { font-size: 28px; }
+      .channel-value { font-size: 20px; }
+      .note { font-size: 13px; }
       .index {
         grid-template-columns: 1fr 1fr;
         gap: 24px 0;
@@ -253,7 +264,7 @@
 
   <main>
     <section aria-label="Contact">
-      <p class="address">By appointment. We respond to correspondence we can act on.</p>
+      <p class="address">By appointment.</p>
       <p class="city">Kuwait City &mdash; State of Kuwait</p>
 
       <hr class="address-divider" />
@@ -264,6 +275,8 @@
           <a href="mailto:contact@stodashi.com" class="channel-value">contact@stodashi.com</a>
         </div>
       </div>
+
+      <p class="note">We respond to correspondence we can act on.</p>
     </section>
   </main>
 
