@@ -108,13 +108,15 @@
     body { animation: pageFadeIn 320ms cubic-bezier(0.2, 0.6, 0.2, 1); }
     @supports (view-transition-name: none) { body { animation: none; } }
     @media (prefers-reduced-motion: reduce) { body { animation: none; } }
+    .lockup-text .lockup-s { position: relative; display: inline-block; }
+    .lockup-text .lockup-s::before { content: ""; position: absolute; top: -0.05em; left: 50%; transform: translateX(-50%); width: 2px; height: 0.28em; background: currentColor; }
   </style>
 </head>
 <body>
   <header>
     <a href="index.html" class="lockup" aria-label="Stodashi home">
       <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="32" height="32" />
-      <span class="lockup-text">stodashi</span>
+      <span class="lockup-text"><span class="lockup-s">s</span>todashi</span>
     </a>
   </header>
 

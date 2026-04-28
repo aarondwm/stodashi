@@ -87,6 +87,8 @@
     main {
       flex: 1;
       max-width: 720px;
+      display: flex;
+      flex-direction: column;
     }
 
     .section-label {
@@ -145,16 +147,6 @@
       color: var(--bone);
     }
 
-    .note {
-      font-family: var(--font-mono);
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--ash);
-      letter-spacing: 0.02em;
-      margin: 36px 0 0;
-      max-width: 56ch;
-    }
-
     a.channel-value:hover {
       text-decoration: underline;
       text-underline-offset: 4px;
@@ -162,20 +154,20 @@
     }
 
     .note {
-      font-family: var(--font-mono);
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--ash);
-      letter-spacing: 0.02em;
-      margin: 0;
-      max-width: 480px;
+      font-family: var(--font-display);
+      font-size: 24px;
+      line-height: 1.4;
+      letter-spacing: -0.012em;
+      color: var(--bone);
+      margin: auto 0;
+      max-width: 56ch;
     }
 
     /* Index footer ---------------------------------------------------------- */
     .index {
       border-top: 1px solid var(--iron);
       padding-top: 24px;
-      margin-top: 56px;
+      margin-top: 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
@@ -251,13 +243,15 @@
     body { animation: pageFadeIn 320ms cubic-bezier(0.2, 0.6, 0.2, 1); }
     @supports (view-transition-name: none) { body { animation: none; } }
     @media (prefers-reduced-motion: reduce) { body { animation: none; } }
+    .lockup-text .lockup-s { position: relative; display: inline-block; }
+    .lockup-text .lockup-s::before { content: ""; position: absolute; top: -0.05em; left: 50%; transform: translateX(-50%); width: 2px; height: 0.28em; background: currentColor; }
   </style>
 </head>
 <body>
   <header>
     <a href="index.html" class="lockup" aria-label="Stodashi home">
       <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="32" height="32" />
-      <span class="lockup-text">stodashi</span>
+      <span class="lockup-text"><span class="lockup-s">s</span>todashi</span>
     </a>
     <div class="section-stamp">CONTACT / 03</div>
   </header>
@@ -275,9 +269,9 @@
           <a href="mailto:contact@stodashi.com" class="channel-value">contact@stodashi.com</a>
         </div>
       </div>
-
-      <p class="note">We respond to correspondence we can act on.</p>
     </section>
+
+    <p class="note">We respond to correspondence we can act on.</p>
   </main>
 
   <nav class="index" aria-label="Sections">
