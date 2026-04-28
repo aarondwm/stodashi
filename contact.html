@@ -55,7 +55,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 96px;
+      margin-bottom: 64px;
     }
 
     .lockup {
@@ -87,7 +87,6 @@
     main {
       flex: 1;
       max-width: 720px;
-      margin-bottom: 96px;
     }
 
     .section-label {
@@ -126,7 +125,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
-      margin-bottom: 48px;
+      margin-bottom: 0;
     }
 
     .channel-label {
@@ -166,6 +165,7 @@
     .index {
       border-top: 1px solid var(--iron);
       padding-top: 24px;
+      margin-top: 56px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
@@ -207,14 +207,14 @@
     /* Responsive ------------------------------------------------------------ */
     @media (max-width: 800px) {
       body { padding: 32px 24px; }
-      header { margin-bottom: 56px; }
-      main { margin-bottom: 56px; }
+      header { margin-bottom: 48px; }
       .address { font-size: 36px; }
       .channel-label { font-size: 22px; }
       .channel-value { font-size: 16px; }
       .index {
         grid-template-columns: 1fr 1fr;
         gap: 24px 0;
+        margin-top: 40px;
       }
       .index-item:nth-child(2) { border-right: none; padding-right: 0; }
       .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
