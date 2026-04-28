@@ -105,7 +105,16 @@
       line-height: 1.25;
       letter-spacing: -0.018em;
       color: var(--bone);
-      margin: 0 0 48px;
+      margin: 0 0 24px;
+    }
+
+    .city {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ash);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0 0 36px;
     }
 
     .address-divider {
@@ -241,15 +250,9 @@
   </header>
 
   <main>
-    <section aria-labelledby="correspondence-heading">
-      <h2 id="correspondence-heading" class="section-label">CORRESPONDENCE</h2>
-
-      <!-- TODO: replace with real registered address -->
-      <address class="address">
-        Stodashi Holding Co.<br />
-        Sharq, Block 5<br />
-        Kuwait City &mdash; State of Kuwait
-      </address>
+    <section aria-label="Contact">
+      <p class="address">By appointment. We respond to correspondence we can act on.</p>
+      <p class="city">Kuwait City &mdash; State of Kuwait</p>
 
       <hr class="address-divider" />
 
@@ -259,8 +262,6 @@
           <a href="mailto:contact@stodashi.com" class="channel-value">contact@stodashi.com</a>
         </div>
       </div>
-
-      <p class="note">By appointment. We respond to correspondence we can act on.</p>
     </section>
   </main>
 
