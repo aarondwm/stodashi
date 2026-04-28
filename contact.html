@@ -128,21 +128,16 @@
     .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--iron);
-      border-bottom: 1px solid var(--iron);
-      padding: 28px 0;
+      gap: 18px;
       margin-bottom: 40px;
     }
     .action {
-      padding: 0 24px;
-      border-right: 1px solid var(--iron);
+      padding: 44px 28px;
       display: block;
       color: var(--bone);
-      transition: opacity 200ms ease;
+      transition: transform 200ms ease;
     }
-    .action:first-child { padding-left: 0; }
-    .action:last-child { padding-right: 0; border-right: none; }
-    .action:hover { opacity: 0.55; }
+    .action:hover { transform: translateY(-2px); }
     .action-num {
       font-family: var(--font-mono);
       font-size: 11px;
@@ -288,8 +283,8 @@
 
     /* Glass 3D button -------------------------------------------------------- */
     .glass3d {
-      --filter-glass3d: blur(45px) brightness(0.26) saturate(0);
-      --color-glass3d: hsl(0 59% 30% / 0.2);
+      --filter-glass3d: blur(10px) saturate(1.1);
+      --color-glass3d: hsla(0, 0%, 100%, 0.45);
       --noise-glass3d: url("https://www.transparenttextures.com/patterns/egg-shell.png");
       position: relative;
       z-index: 4;
@@ -352,11 +347,11 @@
       <hr class="address-divider" />
 
       <div class="actions">
-        <a href="engage.html" class="action">
+        <a href="engage.html" class="action glass3d">
           <span class="action-num">01 &middot; Engage</span>
           <span class="action-title">Original build</span>
         </a>
-        <a href="divest.html" class="action">
+        <a href="divest.html" class="action glass3d">
           <span class="action-num">02 &middot; Divest</span>
           <span class="action-title">Sell to us</span>
         </a>
