@@ -54,8 +54,8 @@
     header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 96px;
+      align-items: flex-start;
+      margin-bottom: 80px;
     }
 
     .lockup {
@@ -71,17 +71,21 @@
     }
 
     .lockup-text {
-      font-size: 16px;
+      font-size: 17px;
       letter-spacing: -0.005em;
       color: var(--bone);
     }
 
-    .section-stamp {
+    .stamp {
       font-family: var(--font-mono);
       font-size: 12px;
       color: var(--ash);
-      letter-spacing: 0.06em;
+      text-align: right;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
     }
+    .stamp a { color: inherit; transition: color 120ms ease; }
+    .stamp a:hover { color: var(--bone); }
 
     /* Diptych --------------------------------------------------------------- */
     main {
@@ -199,7 +203,10 @@
       <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="32" height="32" />
       <span class="lockup-text">stodashi</span>
     </a>
-    <div class="section-stamp">MANDATE / 01</div>
+    <div class="stamp">
+      Kuwait &mdash; global mandate.<br />
+      <a href="mailto:contact@stodashi.com">contact@stodashi.com</a>
+    </div>
   </header>
 
   <main>

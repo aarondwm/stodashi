@@ -55,7 +55,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 64px;
+      margin-bottom: 80px;
     }
     .lockup { display: inline-flex; align-items: center; gap: 12px; }
     .lockup-mark { width: 32px; height: 32px; display: block; }
@@ -68,22 +68,8 @@
       letter-spacing: 0.04em;
       line-height: 1.6;
     }
-
-    /* Section meta ---------------------------------------------------------- */
-    .section-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.14em;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--iron);
-      margin-bottom: 56px;
-      text-transform: uppercase;
-    }
-    .section-meta .label { color: var(--bone); }
+    .stamp a { color: inherit; transition: color 120ms ease; }
+    .stamp a:hover { color: var(--bone); }
 
     /* Page title ------------------------------------------------------------ */
     h1.title {
@@ -105,31 +91,31 @@
     }
     .statement {
       display: grid;
-      grid-template-columns: 80px 220px 1fr;
-      gap: 32px;
-      padding: 32px 0;
+      grid-template-columns: 70px 200px 1fr;
+      gap: 28px;
+      padding: 28px 0;
       border-bottom: 1px solid var(--iron);
       align-items: baseline;
     }
     .statement .num {
       font-family: var(--font-mono);
-      font-size: 18px;
+      font-size: 15px;
       letter-spacing: 0.12em;
       color: var(--bone);
     }
     .statement .heading {
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--bone);
     }
     .statement .text {
-      font-size: 22px;
-      line-height: 1.45;
-      letter-spacing: -0.012em;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
       color: var(--bone);
-      max-width: 52ch;
+      max-width: 56ch;
       margin: 0;
     }
 
@@ -171,11 +157,11 @@
       header.site { margin-bottom: 48px; }
       h1.title { font-size: 36px; }
       .statement {
-        grid-template-columns: 60px 1fr;
-        gap: 16px 16px;
-        padding: 24px 0;
+        grid-template-columns: 50px 1fr;
+        gap: 14px 14px;
+        padding: 22px 0;
       }
-      .statement .text { grid-column: 1 / -1; font-size: 18px; }
+      .statement .text { grid-column: 1 / -1; font-size: 16px; }
       .index {
         grid-template-columns: 1fr 1fr;
         gap: 24px 0;
@@ -210,15 +196,10 @@
       <span class="lockup-text">stodashi</span>
     </a>
     <div class="stamp">
-      MMXXVI<br />
-      KUWAIT CITY
+      Kuwait &mdash; global mandate.<br />
+      <a href="mailto:contact@stodashi.com">contact@stodashi.com</a>
     </div>
   </header>
-
-  <div class="section-meta">
-    <span class="label">Approach</span>
-    <span>02 / 04</span>
-  </div>
 
   <h1 class="title">Four principles. No exceptions.</h1>
 
