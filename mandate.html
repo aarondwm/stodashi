@@ -87,13 +87,13 @@
     .stamp a { color: inherit; transition: color 120ms ease; }
     .stamp a:hover { color: var(--bone); }
 
-    /* Diptych --------------------------------------------------------------- */
+    /* Triptych -------------------------------------------------------------- */
     main {
       flex: 1;
       display: grid;
-      grid-template-columns: 1fr 1px 1fr;
-      gap: 56px;
-      max-width: 1100px;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      gap: 44px;
+      max-width: 1300px;
       margin: 0 auto;
       width: 100%;
     }
@@ -105,20 +105,20 @@
     }
 
     .column-heading {
-      font-size: 48px;
+      font-size: 40px;
       line-height: 1.1;
       color: var(--bone);
       letter-spacing: -0.025em;
-      margin: 0 0 28px;
+      margin: 0 0 24px;
       font-weight: 400;
     }
 
     .column-body {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.6;
       color: var(--bone);
       letter-spacing: -0.005em;
-      max-width: 420px;
+      max-width: 380px;
       margin: 0;
     }
 
@@ -219,6 +219,15 @@
       <h2 id="originate-heading" class="column-heading">We build.</h2>
       <p class="column-body">
         We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Engagements are direct, scoped, and confidential. We do not publicise client work.
+      </p>
+    </section>
+
+    <div class="column-divider" aria-hidden="true"></div>
+
+    <section aria-labelledby="record-heading">
+      <h2 id="record-heading" class="column-heading">We record.</h2>
+      <p class="column-body">
+        Data infrastructure built to acquire, structure, and retain institutional records at the cadence the work actually generates them. Capture is the ground floor of the platforms we build and the businesses we hold.
       </p>
     </section>
 

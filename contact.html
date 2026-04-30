@@ -125,34 +125,120 @@
       margin: 0 0 32px;
     }
 
-    .actions {
+    /* Glass bubble CTA pair ------------------------------------------------- */
+    .glass-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 24px;
       margin-bottom: 40px;
     }
-    .action {
-      padding: 44px 28px;
-      display: block;
+    .glass-cta {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding: 28px 28px 32px;
+      min-height: 200px;
+      border-radius: 16px;
+      border: 1px solid hsl(0 0% 0% / 0.08);
+      background: hsl(0 0% 100% / 0.35);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow:
+        0 1px 0 hsl(0 0% 100% / 0.6) inset,
+        0 -0.5px 0 hsl(0 0% 0% / 0.04) inset,
+        0 12px 32px -12px hsl(0 0% 0% / 0.12),
+        0 2px 8px -2px hsl(0 0% 0% / 0.06);
       color: var(--bone);
-      transition: transform 200ms ease;
+      text-decoration: none;
+      transition:
+        transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 250ms ease,
+        background 250ms ease,
+        border-color 250ms ease;
+      overflow: hidden;
     }
-    .action:hover { transform: translateY(-2px); }
-    .action-num {
+    .glass-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(
+        135deg,
+        hsl(0 0% 100% / 0.4) 0%,
+        hsl(0 0% 100% / 0) 35%,
+        hsl(0 0% 100% / 0) 100%
+      );
+    }
+    .glass-cta:hover {
+      transform: translateY(-2px);
+      background: hsl(0 0% 100% / 0.5);
+      border-color: hsl(0 0% 0% / 0.14);
+      box-shadow:
+        0 1px 0 hsl(0 0% 100% / 0.7) inset,
+        0 -0.5px 0 hsl(0 0% 0% / 0.05) inset,
+        0 20px 40px -16px hsl(0 0% 0% / 0.18),
+        0 4px 12px -4px hsl(0 0% 0% / 0.08);
+    }
+    .glass-cta:active {
+      transform: translateY(0);
+      transition-duration: 80ms;
+    }
+    .glass-cta:focus-visible {
+      outline: none;
+      border-color: var(--bone);
+      box-shadow:
+        0 1px 0 hsl(0 0% 100% / 0.6) inset,
+        0 0 0 3px hsl(0 0% 0% / 0.08),
+        0 12px 32px -12px hsl(0 0% 0% / 0.12);
+    }
+    .glass-cta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-family: var(--font-mono);
       font-size: 11px;
-      letter-spacing: 0.12em;
-      color: var(--bone);
-      margin-bottom: 10px;
-      display: block;
+      letter-spacing: 0.08em;
+      color: var(--ash);
+      position: relative;
+      z-index: 1;
     }
-    .action-title {
-      font-family: var(--font-display);
-      font-size: 22px;
-      letter-spacing: -0.018em;
-      line-height: 1.1;
+    .glass-cta-num em {
+      font-style: normal;
       color: var(--bone);
-      display: block;
+    }
+    .glass-cta-arrow {
+      font-family: var(--font-mono);
+      color: var(--ash);
+      transition: transform 250ms ease, color 250ms ease;
+    }
+    .glass-cta:hover .glass-cta-arrow {
+      transform: translateX(4px);
+      color: var(--bone);
+    }
+    .glass-cta-body { margin-top: auto; position: relative; z-index: 1; }
+    .glass-cta-title {
+      font-size: 24px;
+      letter-spacing: -0.018em;
+      color: var(--bone);
+      margin: 0 0 8px;
+      font-weight: 400;
+    }
+    .glass-cta-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--ash);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .glass-cta--divest .glass-cta-arrow,
+    .glass-cta--divest:hover .glass-cta-arrow { color: var(--oxblood); }
+
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .glass-cta { background: hsl(0 0% 100% / 0.7); }
+      .glass-cta:hover { background: hsl(0 0% 100% / 0.85); }
     }
 
     .channels {
@@ -346,14 +432,26 @@
 
       <hr class="address-divider" />
 
-      <div class="actions">
-        <a href="engage.html" class="action glass3d">
-          <span class="action-num">01 &middot; Engage</span>
-          <span class="action-title">Original build</span>
+      <div class="glass-pair">
+        <a href="engage.html" class="glass-cta glass-cta--engage" aria-label="Engage Stodashi to build an original platform">
+          <div class="glass-cta-header">
+            <span class="glass-cta-num"><em>01</em> &middot; ENGAGE</span>
+            <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <div class="glass-cta-body">
+            <h3 class="glass-cta-title">Original build</h3>
+            <p class="glass-cta-desc">Request that we build a platform for your institution.</p>
+          </div>
         </a>
-        <a href="divest.html" class="action glass3d">
-          <span class="action-num">02 &middot; Divest</span>
-          <span class="action-title">Sell to us</span>
+        <a href="divest.html" class="glass-cta glass-cta--divest" aria-label="Divest your software business to Stodashi">
+          <div class="glass-cta-header">
+            <span class="glass-cta-num"><em>02</em> &middot; DIVEST</span>
+            <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <div class="glass-cta-body">
+            <h3 class="glass-cta-title">Sell to us</h3>
+            <p class="glass-cta-desc">Offer your software business for acquisition.</p>
+          </div>
         </a>
       </div>
 
