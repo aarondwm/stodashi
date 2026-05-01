@@ -86,7 +86,7 @@
     /* Main ------------------------------------------------------------------ */
     main {
       flex: 1;
-      max-width: 720px;
+      max-width: 960px;
       width: 100%;
       margin: 0 auto;
       display: flex;
@@ -128,7 +128,7 @@
     /* Glass bubble CTA pair ------------------------------------------------- */
     .glass-pair {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: 1fr;
       gap: 16px;
       margin-bottom: 40px;
@@ -407,9 +407,19 @@
             <p class="glass-cta-desc">Request that we build a platform for your institution.</p>
           </div>
         </a>
+        <a href="connect.html" class="glass-cta glass-cta--connect" aria-label="Plug your records into Stodashi data architecture">
+          <div class="glass-cta-header">
+            <span class="glass-cta-num"><em>02</em> &middot; CONNECT</span>
+            <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <div class="glass-cta-body">
+            <h3 class="glass-cta-title">Plug in</h3>
+            <p class="glass-cta-desc">Move your records onto our data architecture.</p>
+          </div>
+        </a>
         <a href="divest.html" class="glass-cta glass-cta--divest" aria-label="Divest your software business to Stodashi">
           <div class="glass-cta-header">
-            <span class="glass-cta-num"><em>02</em> &middot; DIVEST</span>
+            <span class="glass-cta-num"><em>03</em> &middot; DIVEST</span>
             <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
           </div>
           <div class="glass-cta-body">

@@ -87,13 +87,13 @@
     .stamp a { color: inherit; transition: color 120ms ease; }
     .stamp a:hover { color: var(--bone); }
 
-    /* Triptych -------------------------------------------------------------- */
+    /* Diptych --------------------------------------------------------------- */
     main {
       flex: 1;
       display: grid;
-      grid-template-columns: 1fr 1px 1fr 1px 1fr;
-      gap: 44px;
-      max-width: 1300px;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 56px;
+      max-width: 1100px;
       margin: 0 auto;
       width: 100%;
     }
@@ -104,30 +104,32 @@
       width: 1px;
     }
 
-    main > section {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      gap: 28px;
-    }
-
     .column-heading {
-      font-size: 40px;
+      font-size: 48px;
       line-height: 1.1;
       color: var(--bone);
       letter-spacing: -0.025em;
-      margin: 0;
+      margin: 0 0 28px;
       font-weight: 400;
-      align-self: end;
     }
 
     .column-body {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.6;
       color: var(--bone);
       letter-spacing: -0.005em;
-      max-width: 380px;
+      max-width: 440px;
       margin: 0;
-      align-self: start;
+    }
+
+    .column-tag {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--bone);
+      opacity: 0.5;
+      letter-spacing: -0.005em;
+      max-width: 440px;
+      margin: 22px 0 0;
     }
 
     /* Index footer ---------------------------------------------------------- */
@@ -226,26 +228,19 @@
     <section aria-labelledby="originate-heading">
       <h2 id="originate-heading" class="column-heading">We build.</h2>
       <p class="column-body">
-        We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Every platform we ship runs on, and contributes to, the data architecture we operate.
+        We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Every system we build runs on the same data architecture, so records produced today remain accessible to whatever the institution builds tomorrow.
       </p>
+      <p class="column-tag">Engagements are direct, scoped, and confidential.</p>
     </section>
 
     <div class="column-divider" aria-hidden="true"></div>
 
-    <section aria-labelledby="record-heading">
-      <h2 id="record-heading" class="column-heading">We record.</h2>
+    <section aria-labelledby="connect-heading">
+      <h2 id="connect-heading" class="column-heading">We connect.</h2>
       <p class="column-body">
-        Our architecture holds institutional records at the cadence the work generates them. Legacy systems migrate onto it; new platforms are built on it. The records accumulate, and the workflows that generate them consolidate.
+        We acquire established software businesses operating in regulated and mission-critical industries, and we operate the data architecture institutions plug into. Records that today sit on paper, in spreadsheets, or behind systems that no longer speak to one another move onto a common fabric &mdash; held to one standard, accessible to the institutions that own them.
       </p>
-    </section>
-
-    <div class="column-divider" aria-hidden="true"></div>
-
-    <section aria-labelledby="acquire-heading">
-      <h2 id="acquire-heading" class="column-heading">We hold.</h2>
-      <p class="column-body">
-        We acquire established software businesses operating in regulated and mission-critical industries. Acquired platforms &mdash; and the records they generate &mdash; migrate onto our architecture and stay there. Our hold period has no clock.
-      </p>
+      <p class="column-tag">Hold period indefinite. Not a fund.</p>
     </section>
   </main>
 
