@@ -105,8 +105,9 @@
     }
 
     main > section {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 28px;
     }
 
     .column-heading {
@@ -114,8 +115,9 @@
       line-height: 1.1;
       color: var(--bone);
       letter-spacing: -0.025em;
-      margin: 0 0 24px;
+      margin: 0;
       font-weight: 400;
+      align-self: end;
     }
 
     .column-body {
@@ -124,7 +126,8 @@
       color: var(--bone);
       letter-spacing: -0.005em;
       max-width: 380px;
-      margin: auto 0 0;
+      margin: 0;
+      align-self: start;
     }
 
     /* Index footer ---------------------------------------------------------- */
