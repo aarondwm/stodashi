@@ -104,13 +104,23 @@
       width: 1px;
     }
 
+    main > section {
+      display: flex;
+      flex-direction: column;
+    }
+
     .column-heading {
       font-size: 48px;
       line-height: 1.1;
       color: var(--bone);
       letter-spacing: -0.025em;
-      margin: 0 0 28px;
+      margin: 0;
       font-weight: 400;
+    }
+
+    .column-content {
+      margin: auto 0;
+      max-width: 440px;
     }
 
     .column-body {
@@ -118,7 +128,6 @@
       line-height: 1.6;
       color: var(--bone);
       letter-spacing: -0.005em;
-      max-width: 440px;
       margin: 0;
     }
 
@@ -128,7 +137,6 @@
       color: var(--bone);
       opacity: 0.5;
       letter-spacing: -0.005em;
-      max-width: 440px;
       margin: 22px 0 0;
     }
 
@@ -227,20 +235,24 @@
   <main>
     <section aria-labelledby="originate-heading">
       <h2 id="originate-heading" class="column-heading">We build.</h2>
-      <p class="column-body">
-        We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Every system we build runs on the same data architecture, so records produced today remain accessible to whatever the institution builds tomorrow.
-      </p>
-      <p class="column-tag">Engagements are direct, scoped, and confidential.</p>
+      <div class="column-content">
+        <p class="column-body">
+          We engineer original platforms for institutions whose workflows demand purpose-built infrastructure. Every system we build runs on the same data architecture, so records produced today remain accessible to whatever the institution builds tomorrow.
+        </p>
+        <p class="column-tag">Engagements are direct, scoped, and confidential.</p>
+      </div>
     </section>
 
     <div class="column-divider" aria-hidden="true"></div>
 
     <section aria-labelledby="connect-heading">
       <h2 id="connect-heading" class="column-heading">We connect.</h2>
-      <p class="column-body">
-        We acquire established software businesses operating in regulated industries, and we run the architecture institutions plug into. Records held on paper, in spreadsheets, or behind systems that no longer speak move onto a single fabric, accessible to the institutions that own them.
-      </p>
-      <p class="column-tag">Hold period indefinite. Not a fund.</p>
+      <div class="column-content">
+        <p class="column-body">
+          We acquire established software businesses operating in regulated industries, and we run the architecture institutions plug into. Records held on paper, in spreadsheets, or behind systems that no longer speak move onto a single fabric, accessible to the institutions that own them.
+        </p>
+        <p class="column-tag">Hold period indefinite. Not a fund.</p>
+      </div>
     </section>
   </main>
 
