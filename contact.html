@@ -129,25 +129,28 @@
     .glass-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      grid-auto-rows: 1fr;
+      gap: 16px;
       margin-bottom: 40px;
+      align-items: stretch;
     }
     .glass-cta {
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 28px;
-      padding: 28px 28px 32px;
+      gap: 24px;
+      padding: 26px 26px 30px;
+      height: 100%;
       min-height: 200px;
-      border-radius: 16px;
-      border: 1px solid hsl(0 0% 100% / 0.4);
-      background: hsl(0 0% 100% / 0.12);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-radius: 6px;
+      border: 1px solid hsl(0 0% 100% / 0.5);
+      background: hsl(0 0% 100% / 0.08);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
       box-shadow:
-        0 1px 0 hsl(0 0% 100% / 0.55) inset,
+        0 1px 0 hsl(0 0% 100% / 0.6) inset,
         0 -1px 0 hsl(0 0% 0% / 0.03) inset,
-        0 18px 40px -20px hsl(0 0% 0% / 0.14),
+        0 16px 36px -18px hsl(0 0% 0% / 0.12),
         0 2px 8px -4px hsl(0 0% 0% / 0.05);
       color: var(--bone);
       text-decoration: none;
@@ -198,9 +201,9 @@
       align-items: center;
       justify-content: space-between;
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--ash);
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--bone);
       position: relative;
       z-index: 1;
     }
@@ -208,6 +211,7 @@
       font-style: normal;
       color: var(--bone);
     }
+    .glass-cta-num { white-space: nowrap; }
     .glass-cta-arrow {
       font-family: var(--font-mono);
       color: var(--ash);
@@ -219,7 +223,8 @@
     }
     .glass-cta-body { margin-top: auto; position: relative; z-index: 1; }
     .glass-cta-title {
-      font-size: 24px;
+      font-size: 22px;
+      line-height: 1.15;
       letter-spacing: -0.018em;
       color: var(--bone);
       margin: 0 0 8px;
@@ -340,9 +345,15 @@
       .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
     }
 
+    @media (max-width: 640px) {
+      .glass-pair { grid-template-columns: 1fr; gap: 12px; }
+      .glass-cta { min-height: 160px; padding: 22px; }
+      .glass-cta-header { font-size: 13px; }
+      .glass-cta-title { font-size: 20px; }
+    }
+
     @media (max-width: 480px) {
       .channels { grid-template-columns: 1fr; gap: 18px; }
-      .actions { grid-template-columns: 1fr; gap: 12px; }
     }
 
     @media (max-width: 420px) {
