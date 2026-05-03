@@ -4,475 +4,359 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Engage &mdash; stodashi</title>
-  <meta name="description" content="Have Stodashi build software for your institution." />
+  <meta name="description" content="Commission a build." />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/stodashi-logo.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --obsidian: #0A0A0B;
-      --graphite: #1A1A1C;
-      --bone: #F2F0E8;
-      --ash: #8C8C8F;
-      --iron: #2A2A2D;
-      --oxblood: #791F1F;
+:root {
+  --obsidian: #0A0A0B;
+  --bone: #F2F0E8;
+  --ash: #6E6E70;
+  --hairline: #D6D4CD;
+  --oxblood: #791F1F;
 
-      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
-    }
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
 
-    *, *::before, *::after { box-sizing: border-box; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--obsidian);
-      color: var(--bone);
-      font-family: var(--font-display);
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+body {
+  background: var(--bone);
+  color: var(--obsidian);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 48px 24px;
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 48px 64px 32px;
-    }
+a { color: inherit; text-decoration: none; transition: color 200ms ease, border-color 200ms ease; }
+::selection { background: var(--obsidian); color: var(--bone); }
 
-    a { color: inherit; text-decoration: none; transition: color 120ms ease; }
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 88px;
+}
 
-    /* Header ---------------------------------------------------------------- */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 56px;
-    }
+.lockup { display: inline-flex; align-items: center; gap: 12px; }
 
-    .lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
+.lockup-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--oxblood);
+  color: var(--bone);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1;
+}
 
-    .lockup-mark { width: 40px; height: 40px; display: block; }
+.lockup-text { font-size: 17px; letter-spacing: -0.005em; color: var(--obsidian); }
 
-    .lockup-text {
-      font-size: 22px;
-      letter-spacing: -0.005em;
-      color: var(--bone);
-    }
+.stamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--obsidian);
+}
+.stamp a:hover { color: var(--obsidian); }
 
-    .section-stamp {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ash);
-      letter-spacing: 0.06em;
-    }
+main { flex: 1; display: flex; flex-direction: column; }
 
-    /* Tabs ------------------------------------------------------------------ */
-    .tabs {
-      display: flex;
-      gap: 22px;
-      padding-bottom: 36px;
-      border-bottom: 1px solid var(--iron);
-      margin-bottom: 56px;
-    }
+.section-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--obsidian);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 14px;
+  margin-bottom: 64px;
+}
 
-    .tab {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--ash);
-      padding-bottom: 12px;
-      border-bottom: 1px solid transparent;
-    }
+.index {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hairline);
+  padding-top: 18px;
+}
+.index-item { padding-right: 24px; }
+.index-item .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--obsidian);
+  margin-bottom: 4px;
+  display: block;
+}
+.index-item .name { font-size: 13px; letter-spacing: -0.005em; color: var(--obsidian); }
+.index-item.current a { pointer-events: none; }
+.index-item.current .num::after { content: '  ·'; }
 
-    .tab:hover { color: var(--bone); }
+.form-wrap {
+  max-width: 640px;
+  padding-bottom: 96px;
+}
 
-    .tab.current {
-      color: var(--bone);
-      border-bottom-color: var(--bone);
-      pointer-events: none;
-    }
+.form-tabs {
+  display: flex;
+  gap: 28px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 56px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+.form-tabs a { color: var(--ash); transition: color 200ms ease; }
+.form-tabs a:hover { color: var(--obsidian); }
+.form-tabs a.current { color: var(--obsidian); pointer-events: none; }
 
-    /* Form ------------------------------------------------------------------ */
-    main {
-      flex: 1;
-      max-width: 620px;
-      width: 100%;
-      margin: 0 auto 64px;
-    }
+.form-prompt {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
 
-    .prompt {
-      font-size: 32px;
-      line-height: 1.3;
-      letter-spacing: -0.022em;
-      color: var(--bone);
-      margin: 0 0 48px;
-      font-weight: 400;
-    }
+.form-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ash);
+  margin: 0 0 40px;
+  line-height: 1.7;
+}
 
-    .field-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 28px;
-    }
+.field {
+  border-bottom: 1px solid var(--hairline);
+  padding: 12px 0;
+}
 
-    .field {
-      border-bottom: 1px solid var(--iron);
-      padding: 8px 0;
-    }
+.field-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin-bottom: 6px;
+}
 
-    .field-row + .field { margin-bottom: 28px; }
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--obsidian);
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  padding: 0;
+  resize: none;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--ash);
+  opacity: 0.55;
+  font-style: italic;
+}
 
-    .field-label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--ash);
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
 
-    .field input,
-    .field textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--bone);
-      font-family: var(--font-display);
-      font-size: 14px;
-      line-height: 1.65;
-      letter-spacing: -0.005em;
-      padding: 0;
-      resize: none;
-    }
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  gap: 16px;
+}
 
-    .field textarea {
-      min-height: 140px;
-    }
+.attach-trigger {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--obsidian);
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: border-color 200ms ease;
+}
+.attach-trigger:hover { border-color: var(--obsidian); }
 
-    .field input::placeholder,
-    .field textarea::placeholder {
-      color: var(--ash);
-      font-style: italic;
-      opacity: 1;
-    }
+.attach-name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--obsidian);
+  letter-spacing: 0.02em;
+  margin-left: 12px;
+}
 
-    .field.message {
-      padding: 14px 0 24px;
-      margin-bottom: 36px;
-    }
+.submit-btn {
+  background: var(--obsidian);
+  color: var(--bone);
+  border: 1px solid var(--obsidian);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+.submit-btn:hover { opacity: 0.85; }
 
-    /* Appendix -------------------------------------------------------------- */
-    .field.appendix {
-      padding: 14px 0;
-      margin-bottom: 36px;
-    }
+.engage-form .name-row { margin-bottom: 28px; }
+.engage-form .field.brief {
+  border: 1px solid var(--hairline);
+  padding: 18px 20px;
+  min-height: 280px;
+}
+.engage-form .field.brief textarea {
+  min-height: 240px;
+  font-size: 16px;
+  line-height: 1.65;
+}
 
-    .appendix-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-    }
+@keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
+@media (prefers-reduced-motion: reduce) { body { animation: none; } }
 
-    .appendix-meta {
-      flex: 1;
-    }
-
-    .appendix-helper {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.02em;
-      line-height: 1.5;
-    }
-
-    .appendix-trigger {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--bone);
-      letter-spacing: 0.08em;
-      border: 1px solid var(--iron);
-      padding: 8px 14px;
-      cursor: pointer;
-      background: transparent;
-      transition: border-color 120ms ease;
-      flex-shrink: 0;
-    }
-
-    .appendix-trigger:hover { border-color: var(--bone); }
-
-    .appendix-filename {
-      display: block;
-      margin-top: 10px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--bone);
-      letter-spacing: 0.02em;
-      min-height: 14px;
-    }
-
-    .appendix-filename:empty { display: none; }
-
-    /* Submit row ------------------------------------------------------------ */
-    .submit-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .confidence-note {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.02em;
-    }
-
-    .submit-btn {
-      background: var(--bone);
-      color: var(--obsidian);
-      border: none;
-      padding: 14px 28px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      transition: opacity 120ms ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .submit-btn:hover { opacity: 0.85; }
-    .submit-btn:focus-visible {
-      outline: 2px solid var(--bone);
-      outline-offset: 3px;
-    }
-
-    /* Index footer ---------------------------------------------------------- */
-    .index {
-      border-top: 1px solid var(--iron);
-      padding-top: 24px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .index-item {
-      padding: 0 20px;
-      border-right: 1px solid var(--iron);
-    }
-    .index-item:first-child { padding-left: 0; }
-    .index-item:last-child { padding-right: 0; border-right: none; }
-
-    .index-num {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-
-    .index-title {
-      font-size: 13px;
-      color: var(--ash);
-      letter-spacing: -0.005em;
-      display: block;
-      transition: color 120ms ease;
-    }
-
-    .index-item a:hover .index-title,
-    .index-item a:hover .index-num { color: var(--bone); }
-
-    .index-item.current .index-num,
-    .index-item.current .index-title { color: var(--bone); }
-
-    .index-item.current a[aria-current] { pointer-events: none; }
-
-    /* Responsive ------------------------------------------------------------ */
-    @media (max-width: 800px) {
-      body { padding: 32px 24px; }
-      header { margin-bottom: 36px; }
-      .tabs { margin-bottom: 40px; padding-bottom: 24px; }
-      .prompt { font-size: 24px; margin-bottom: 32px; }
-      .field-row { grid-template-columns: 1fr; gap: 18px; margin-bottom: 18px; }
-      .submit-row { flex-direction: column; align-items: stretch; }
-      .submit-btn { justify-content: center; }
-      .index { grid-template-columns: 1fr 1fr; gap: 24px 0; }
-      .index-item:nth-child(2) { border-right: none; padding-right: 0; }
-      .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
-    }
-
-    @media (max-width: 480px) {
-      .appendix-header { flex-direction: column; gap: 12px; align-items: flex-start; }
-    }
-
-    @media (max-width: 420px) {
-      .index { grid-template-columns: 1fr; }
-      .index-item {
-        padding: 16px 0;
-        border-right: none !important;
-        border-bottom: 1px solid var(--iron);
-      }
-      .index-item:last-child { border-bottom: none; }
-    }
-
-    /* Page transition ------------------------------------------------------- */
-    @view-transition { navigation: auto; }
-    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1); }
-    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
-    body { animation: pageFadeIn 200ms cubic-bezier(0.2, 0.6, 0.2, 1); }
-    @supports (view-transition-name: none) { body { animation: none; } }
-    @media (prefers-reduced-motion: reduce) { body { animation: none; } }
-    .lockup-text .lockup-s { position: relative; display: inline-block; }
-    .lockup-text .lockup-s::before { content: ""; position: absolute; top: 0.32em; left: 50%; transform: translateX(-50%); width: 0.075em; height: 0.13em; background: currentColor; }
-    /* Inverted palette */
-    body { --bone: #0A0A0B; --obsidian: #F2F0E8; --iron: #D6D4CD; --ash: #0A0A0B; }
-
-    /* Glass 3D button -------------------------------------------------------- */
-    .glass3d {
-      --filter-glass3d: blur(10px) saturate(1.1);
-      --color-glass3d: hsla(0, 0%, 100%, 0.45);
-      --noise-glass3d: url("https://www.transparenttextures.com/patterns/egg-shell.png");
-      position: relative;
-      z-index: 4;
-      box-shadow:
-        0 0 0.75px hsl(205 20% 10% / 0.2),
-        0.7px 0.8px 1.2px -0.4px hsl(205 20% 10% / 0.1),
-        1.3px 1.5px 2.2px -0.8px hsl(205 20% 10% / 0.1),
-        2.3px 2.6px 3.9px -1.2px hsl(205 20% 10% / 0.1),
-        3.9px 4.4px 6.6px -1.7px hsl(205 20% 10% / 0.1),
-        6.5px 7.2px 10.9px -2.1px hsl(205 20% 10% / 0.1),
-        8px 9px 14px -2.5px hsl(205 20% 10% / 0.2);
-    }
-    .glass3d::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      overflow: hidden;
-      z-index: 3;
-      -webkit-backdrop-filter: var(--filter-glass3d);
-      backdrop-filter: var(--filter-glass3d);
-      background-color: var(--color-glass3d);
-      background-image: var(--noise-glass3d);
-      background-size: 100px;
-      background-repeat: repeat;
-    }
-    .glass3d::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      overflow: hidden;
-      z-index: 5;
-      box-shadow:
-        inset 2px 2px 1px -3px hsl(205 20% 90% / 0.8),
-        inset 4px 4px 2px -6px hsl(205 20% 90% / 0.3),
-        inset 1.5px 1.5px 1.5px -0.75px hsl(205 20% 90% / 0.15),
-        inset 1.5px 1.5px 0.25px hsl(205 20% 90% / 0.03),
-        inset 0 0 0.25px 0.5px hsl(205 20% 90% / 0.03);
-    }
-    .glass3d > * { position: relative; z-index: 6; }
+@media (max-width: 720px) {
+  body { padding: 24px 20px; }
+  .site-header { margin-bottom: 56px; }
+  .stamp { font-size: 10px; }
+  .form-prompt { font-size: 22px; }
+  .field-row { grid-template-columns: 1fr; gap: 4px; }
+  .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
+  .index-item { padding-right: 12px; }
+  .index-item:nth-child(odd) { padding-right: 0; }
+}
+@media (max-width: 420px) {
+  .form-tabs { gap: 14px; flex-wrap: wrap; }
+  .form-actions { flex-direction: column; align-items: stretch; }
+  .submit-btn { text-align: center; }
+}
   </style>
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <a href="index.html" class="lockup" aria-label="Stodashi home">
-      <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="40" height="40" />
-      <span class="lockup-text"><span class="lockup-s">s</span>todashi</span>
+      <span class="lockup-mark" aria-hidden="true">[s]</span>
+      <span class="lockup-text">stodashi</span>
     </a>
-    <div class="section-stamp">CONTACT / 03 &middot; ENGAGE</div>
+    <div class="stamp">
+      <span id="local-time">LDN &mdash;:&mdash;</span><br />
+      <a href="mailto:contact@stodashi.com">contact@stodashi.com</a>
+    </div>
   </header>
 
-  <nav class="tabs" aria-label="Inquiry type">
-    <a href="engage.html" class="tab current" aria-current="page">ENGAGE &mdash; ORIGINAL BUILD</a>
-    <a href="connect.html" class="tab">CONNECT &mdash; PLUG IN</a>
-    <a href="divest.html" class="tab">DIVEST &mdash; SELL TO US</a>
-  </nav>
-
   <main>
-    <h1 class="prompt">What needs building?</h1>
+    <div class="section-meta">
+      <span>Contact &middot; Engage</span>
+      <span>03 / 04</span>
+    </div>
 
-    <!-- TODO: replace action with your form endpoint -->
-    <form action="" method="POST" enctype="multipart/form-data" novalidate>
-      <div class="field-row">
-        <div class="field">
-          <label for="name" class="field-label">NAME</label>
-          <input type="text" id="name" name="name" placeholder="your name and role" required autocomplete="name" />
-        </div>
-        <div class="field">
-          <label for="email" class="field-label">EMAIL</label>
-          <input type="email" id="email" name="email" placeholder="reply address" required autocomplete="email" />
-        </div>
-      </div>
+    <section class="form-wrap" aria-label="Engage">
+      <nav class="form-tabs" aria-label="Inquiry type">
+        <a href="engage.html" class="current" aria-current="page">Engage</a>
+        <a href="connect.html">Connect</a>
+        <a href="divest.html">Divest</a>
+      </nav>
 
-      <div class="field">
-        <label for="institution" class="field-label">INSTITUTION</label>
-        <input type="text" id="institution" name="institution" placeholder="organization name" required autocomplete="organization" />
-      </div>
+      <h1 class="form-prompt">What needs building.</h1>
 
-      <div class="field message">
-        <label for="message" class="field-label sr-only">MESSAGE</label>
-        <textarea id="message" name="message" rows="6" placeholder="Write as little or as much as you need. We read every inquiry." required></textarea>
-      </div>
-
-      <div class="field appendix">
-        <div class="appendix-header">
-          <div class="appendix-meta">
-            <span class="field-label">APPENDIX</span>
-            <span class="appendix-helper">Optional &mdash; RFP, technical spec, or supporting document.</span>
+      <form action="" method="POST" enctype="multipart/form-data" novalidate class="engage-form">
+        <div class="field-row name-row">
+          <div class="field">
+            <label for="name" class="field-label">Name</label>
+            <input type="text" id="name" name="name" placeholder="your name" required autocomplete="name" />
           </div>
-          <input type="file" id="appendix" name="appendix" hidden />
-          <label for="appendix" class="appendix-trigger">ATTACH FILE</label>
+          <div class="field">
+            <label for="email" class="field-label">Email</label>
+            <input type="email" id="email" name="email" placeholder="reply address" required autocomplete="email" />
+          </div>
         </div>
-        <span class="appendix-filename" id="appendix-filename" aria-live="polite"></span>
-      </div>
 
-      <div class="submit-row">
-        <span class="confidence-note">Held in confidence.</span>
-        <button type="submit" class="submit-btn glass3d"><span>SEND &nbsp;&rarr;</span></button>
-      </div>
-    </form>
+        <div class="field brief">
+          <label for="brief" class="field-label">Brief</label>
+          <textarea id="brief" name="brief" rows="12" placeholder="Write as little or as much as you need." required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <div>
+            <input type="file" id="appendix" name="appendix" hidden />
+            <label for="appendix" class="attach-trigger">Attach</label>
+            <span class="attach-name" id="attach-name" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="submit-btn">Send &nbsp;&rarr;</button>
+        </div>
+      </form>
+    </section>
   </main>
 
   <nav class="index" aria-label="Sections">
     <div class="index-item">
-      <a href="mandate.html"><div class="index-num">01</div><span class="index-title">Mandate</span></a>
+      <a href="mandate.html"><span class="num">01</span><span class="name">Mandate</span></a>
     </div>
     <div class="index-item">
-      <a href="approach.html"><div class="index-num">02</div><span class="index-title">Approach</span></a>
+      <a href="vision.html"><span class="num">02</span><span class="name">Vision</span></a>
     </div>
     <div class="index-item current">
-      <a href="contact.html" aria-current="page"><div class="index-num">03 &middot;</div><span class="index-title">Contact</span></a>
+      <a href="contact.html" aria-current="page"><span class="num">03</span><span class="name">Contact</span></a>
     </div>
     <div class="index-item">
-      <a href="legal.html"><div class="index-num">04</div><span class="index-title">Legal</span></a>
+      <a href="legal.html"><span class="num">04</span><span class="name">Legal</span></a>
     </div>
   </nav>
 
   <script>
-    // Show selected filename next to the attach trigger
+    (function () {
+      var el = document.getElementById('local-time');
+      if (!el) return;
+      var fmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/London',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      });
+      function tick() { el.textContent = 'LDN ' + fmt.format(new Date()); }
+      tick();
+      setInterval(tick, 60000);
+    })();
+
     (function () {
       var input = document.getElementById('appendix');
-      var label = document.getElementById('appendix-filename');
+      var label = document.getElementById('attach-name');
       if (!input || !label) return;
       input.addEventListener('change', function () {
         var f = input.files && input.files[0];

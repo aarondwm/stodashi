@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mandate &mdash; stodashi</title>
-  <meta name="description" content="The firm's mandate in software and data." />
+  <title>Privacy &mdash; stodashi</title>
+  <meta name="description" content="Privacy policy." />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/stodashi-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -112,60 +112,79 @@ main { flex: 1; display: flex; flex-direction: column; }
 .index-item.current a { pointer-events: none; }
 .index-item.current .num::after { content: '  ·'; }
 
-.mandate-diptych {
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 56px;
-  max-width: 1000px;
-  padding-bottom: 36px;
+.records-wrap {
+  max-width: 720px;
+  padding-bottom: 96px;
 }
 
-.mandate-diptych .col-divider {
-  background: var(--hairline);
-  width: 1px;
-  align-self: stretch;
-}
-
-.mandate-section {
-  display: flex;
-  flex-direction: column;
-  max-width: 42ch;
-}
-
-.mandate-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ash);
-  margin: 0 0 18px;
-}
-
-.mandate-section h2 {
-  font-size: 36px;
+.records-title {
+  font-size: 22px;
   font-weight: 400;
-  letter-spacing: -0.022em;
-  line-height: 1.1;
+  letter-spacing: -0.012em;
   margin: 0 0 32px;
 }
 
-.mandate-section p {
-  font-size: 17px;
-  line-height: 1.65;
-  letter-spacing: -0.005em;
-  margin: 0;
-}
-
-.mandate-note {
+.records-note {
   font-family: var(--font-mono);
   font-size: 12px;
   font-style: italic;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--ash);
-  margin: 32px 0 96px;
-  max-width: 1000px;
-  border-top: 1px solid var(--hairline);
+  margin: 0 0 32px;
+  max-width: 60ch;
+  line-height: 1.7;
+}
+
+.records-copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ash);
+}
+
+.legal-subnav {
+  display: flex;
+  gap: 28px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 48px 0 0;
   padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+}
+.legal-subnav a { color: var(--ash); transition: color 200ms ease; }
+.legal-subnav a:hover { color: var(--obsidian); }
+.legal-subnav a.current { color: var(--obsidian); pointer-events: none; }
+
+.records-stack { margin: 0 0 36px; }
+
+.records-stack .clause {
+  border-bottom: 1px solid var(--hairline);
+  padding: 22px 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: baseline;
+}
+.records-stack .clause:first-child { border-top: 1px solid var(--hairline); }
+
+.records-stack .clause-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin: 0;
+}
+
+.records-stack .clause-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: -0.003em;
+  color: var(--obsidian);
+  max-width: 56ch;
 }
 
 @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -176,11 +195,9 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
   body { padding: 24px 20px; }
   .site-header { margin-bottom: 56px; }
   .stamp { font-size: 10px; }
-
-  .mandate-diptych { grid-template-columns: 1fr; gap: 48px; }
-  .mandate-diptych .col-divider { width: 100%; height: 1px; }
-  .mandate-section h2 { font-size: 28px; }
-
+  .records-title { font-size: 18px; }
+  .records-stack .clause { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+  .legal-subnav { gap: 16px; flex-wrap: wrap; }
   .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
   .index-item { padding-right: 12px; }
   .index-item:nth-child(odd) { padding-right: 0; }
@@ -201,32 +218,59 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
 
   <main>
     <div class="section-meta">
-      <span>Mandate</span>
-      <span>01 / 04</span>
+      <span>Legal &middot; Privacy</span>
+      <span>04 / 04</span>
     </div>
 
-    <section class="mandate-diptych" aria-label="Mandate">
-      <div class="mandate-section">
-        <p class="mandate-label">&mdash; Software</p>
-        <h2>Built, bought, operated.</h2>
-        <p>The firm builds platforms and operates them. The firm acquires software businesses and runs them under their existing operators. Both feed the same architecture.</p>
+    <section class="records-wrap" aria-label="Privacy policy">
+      <h1 class="records-title">Privacy.</h1>
+
+      <div class="records-stack">
+        <div class="clause">
+          <p class="clause-label">Information collected</p>
+          <p class="clause-body">Names, email addresses, organisation names, and the contents of correspondence sent to the firm via this site. Server logs may retain IP addresses and request metadata for security purposes.</p>
+        </div>
+        <div class="clause">
+          <p class="clause-label">Use</p>
+          <p class="clause-body">Information is used to respond to correspondence and to maintain the security and operation of this site. It is not sold, licensed, or shared with third parties.</p>
+        </div>
+        <div class="clause">
+          <p class="clause-label">Retention</p>
+          <p class="clause-body">Correspondence is retained for as long as the firm considers it operationally relevant. Server logs are retained for thirty days.</p>
+        </div>
+        <div class="clause">
+          <p class="clause-label">Cookies</p>
+          <p class="clause-body">This site sets no tracking, analytics, or advertising cookies. A session cookie may be used where strictly necessary for site function.</p>
+        </div>
+        <div class="clause">
+          <p class="clause-label">Rights</p>
+          <p class="clause-body">Subjects may request access to or deletion of their personal data by writing to contact@stodashi.com. The firm responds within thirty days where the request is valid.</p>
+        </div>
+        <div class="clause">
+          <p class="clause-label">Records held under contract</p>
+          <p class="clause-body">Institutional records held by the firm under separate engagements are governed by those engagements and not by this policy.</p>
+        </div>
+        <div class="clause">
+          <p class="clause-label">Contact</p>
+          <p class="clause-body">Privacy queries: contact@stodashi.com.</p>
+        </div>
       </div>
 
-      <div class="col-divider" aria-hidden="true"></div>
+      <p class="records-note">This policy may be amended without notice. Material changes are reflected in the version date below.</p>
 
-      <div class="mandate-section">
-        <p class="mandate-label">&mdash; Data</p>
-        <h2>Captured and consolidated.</h2>
-        <p>Intelligence reaches the firm through the platforms it operates, the institutions that produce records, and the businesses it acquires. All flows to one place.</p>
-      </div>
+      <p class="records-copy">Version &mdash; MMXXVI &middot; &copy; MMXXVI Stodashi.</p>
+
+      <nav class="legal-subnav" aria-label="Legal sub-pages">
+        <a href="legal.html">Entity</a>
+        <a href="privacy.html" class="current" aria-current="page">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
     </section>
-
-    <p class="mandate-note">An acquisition may be of software, data, or both &mdash; a company and its records, the records alone, or the company alone.</p>
   </main>
 
   <nav class="index" aria-label="Sections">
-    <div class="index-item current">
-      <a href="mandate.html" aria-current="page"><span class="num">01</span><span class="name">Mandate</span></a>
+    <div class="index-item">
+      <a href="mandate.html"><span class="num">01</span><span class="name">Mandate</span></a>
     </div>
     <div class="index-item">
       <a href="vision.html"><span class="num">02</span><span class="name">Vision</span></a>
@@ -234,8 +278,8 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
     <div class="index-item">
       <a href="contact.html"><span class="num">03</span><span class="name">Contact</span></a>
     </div>
-    <div class="index-item">
-      <a href="legal.html"><span class="num">04</span><span class="name">Legal</span></a>
+    <div class="index-item current">
+      <a href="legal.html" aria-current="page"><span class="num">04</span><span class="name">Legal</span></a>
     </div>
   </nav>
 

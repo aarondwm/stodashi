@@ -4,467 +4,294 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact &mdash; stodashi</title>
-  <meta name="description" content="By appointment. London." />
+  <meta name="description" content="By appointment." />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/stodashi-logo.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --obsidian: #0A0A0B;
-      --graphite: #1A1A1C;
-      --bone: #F2F0E8;
-      --ash: #8C8C8F;
-      --iron: #2A2A2D;
-      --oxblood: #791F1F;
+:root {
+  --obsidian: #0A0A0B;
+  --bone: #F2F0E8;
+  --ash: #6E6E70;
+  --hairline: #D6D4CD;
+  --oxblood: #791F1F;
 
-      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
-    }
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
 
-    *, *::before, *::after { box-sizing: border-box; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--obsidian);
-      color: var(--bone);
-      font-family: var(--font-display);
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+body {
+  background: var(--bone);
+  color: var(--obsidian);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 48px 24px;
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 48px 64px 32px;
-    }
+a { color: inherit; text-decoration: none; transition: color 200ms ease, border-color 200ms ease; }
+::selection { background: var(--obsidian); color: var(--bone); }
 
-    a { color: inherit; text-decoration: none; transition: color 120ms ease; }
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 88px;
+}
 
-    /* Header ---------------------------------------------------------------- */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 64px;
-    }
+.lockup { display: inline-flex; align-items: center; gap: 12px; }
 
-    .lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
+.lockup-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--oxblood);
+  color: var(--bone);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1;
+}
 
-    .lockup-mark {
-      width: 40px;
-      height: 40px;
-      display: block;
-    }
+.lockup-text { font-size: 17px; letter-spacing: -0.005em; color: var(--obsidian); }
 
-    .lockup-text {
-      font-size: 22px;
-      letter-spacing: -0.005em;
-      color: var(--bone);
-    }
+.stamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--obsidian);
+}
+.stamp a:hover { color: var(--obsidian); }
 
-    .section-stamp {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ash);
-      letter-spacing: 0.06em;
-    }
+main { flex: 1; display: flex; flex-direction: column; }
 
-    /* Main ------------------------------------------------------------------ */
-    main {
-      flex: 1;
-      max-width: 960px;
-      width: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-    }
+.section-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--obsidian);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 14px;
+  margin-bottom: 64px;
+}
 
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 14px;
-      color: var(--ash);
-      letter-spacing: 0.1em;
-      margin-bottom: 36px;
-    }
+.index {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hairline);
+  padding-top: 18px;
+}
+.index-item { padding-right: 24px; }
+.index-item .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--obsidian);
+  margin-bottom: 4px;
+  display: block;
+}
+.index-item .name { font-size: 13px; letter-spacing: -0.005em; color: var(--obsidian); }
+.index-item.current a { pointer-events: none; }
+.index-item.current .num::after { content: '  ·'; }
 
-    .address {
-      font-family: var(--font-display);
-      font-style: normal;
-      font-size: 56px;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      color: var(--bone);
-      margin: 0 0 14px;
-    }
+.pathways-wrap {
+  max-width: 720px;
+  padding-bottom: 96px;
+}
 
-    .city {
-      font-family: var(--font-mono);
-      font-size: 15px;
-      color: var(--bone);
-      letter-spacing: 0.12em;
-      margin: 32px 0 40px;
-    }
+.pathways-title {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  margin: 0 0 56px;
+  line-height: 1.2;
+}
 
-    .address-divider {
-      border: none;
-      border-top: 1px solid var(--iron);
-      margin: 0 0 32px;
-    }
+.pathways {
+  list-style: none;
+  margin: 0 0 56px;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
 
-    /* Glass bubble CTA pair ------------------------------------------------- */
-    .glass-pair {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 1fr;
-      gap: 16px;
-      margin-bottom: 40px;
-      align-items: stretch;
-    }
-    .glass-cta {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding: 26px 26px 30px;
-      height: 100%;
-      min-height: 200px;
-      border-radius: 6px;
-      border: 1px solid hsl(0 0% 100% / 0.5);
-      background: hsl(0 0% 100% / 0.08);
-      backdrop-filter: blur(18px) saturate(180%);
-      -webkit-backdrop-filter: blur(18px) saturate(180%);
-      box-shadow:
-        0 1px 0 hsl(0 0% 100% / 0.6) inset,
-        0 -1px 0 hsl(0 0% 0% / 0.03) inset,
-        0 16px 36px -18px hsl(0 0% 0% / 0.12),
-        0 2px 8px -4px hsl(0 0% 0% / 0.05);
-      color: var(--bone);
-      text-decoration: none;
-      transition:
-        transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
-        box-shadow 250ms ease,
-        background 250ms ease,
-        border-color 250ms ease;
-      overflow: hidden;
-    }
-    .glass-cta::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      background: linear-gradient(
-        135deg,
-        hsl(0 0% 100% / 0.5) 0%,
-        hsl(0 0% 100% / 0.08) 25%,
-        hsl(0 0% 100% / 0) 60%
-      );
-    }
-    .glass-cta:hover {
-      transform: translateY(-2px);
-      background: hsl(0 0% 100% / 0.2);
-      border-color: hsl(0 0% 100% / 0.6);
-      box-shadow:
-        0 1px 0 hsl(0 0% 100% / 0.7) inset,
-        0 -1px 0 hsl(0 0% 0% / 0.04) inset,
-        0 24px 48px -20px hsl(0 0% 0% / 0.18),
-        0 4px 12px -4px hsl(0 0% 0% / 0.06);
-    }
-    .glass-cta:active {
-      transform: translateY(0);
-      transition-duration: 80ms;
-    }
-    .glass-cta:focus-visible {
-      outline: none;
-      border-color: var(--bone);
-      box-shadow:
-        0 1px 0 hsl(0 0% 100% / 0.6) inset,
-        0 0 0 3px hsl(0 0% 0% / 0.08),
-        0 12px 32px -12px hsl(0 0% 0% / 0.12);
-    }
-    .glass-cta-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 14px;
-      letter-spacing: 0.1em;
-      color: var(--bone);
-      position: relative;
-      z-index: 1;
-    }
-    .glass-cta-num em {
-      font-style: normal;
-      color: var(--bone);
-    }
-    .glass-cta-num { white-space: nowrap; }
-    .glass-cta-arrow {
-      font-family: var(--font-mono);
-      color: var(--ash);
-      transition: transform 250ms ease, color 250ms ease;
-    }
-    .glass-cta:hover .glass-cta-arrow {
-      transform: translateX(4px);
-      color: var(--bone);
-    }
-    .glass-cta-body { position: relative; z-index: 1; }
-    .glass-cta-title {
-      font-size: 22px;
-      line-height: 1.15;
-      letter-spacing: -0.018em;
-      color: var(--bone);
-      margin: 0 0 8px;
-      font-weight: 400;
-    }
-    .glass-cta-desc {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      color: var(--ash);
-      line-height: 1.55;
-      margin: 0;
-    }
-    .glass-cta--divest .glass-cta-arrow,
-    .glass-cta--divest:hover .glass-cta-arrow { color: var(--oxblood); }
+.pathways li { border-bottom: 1px solid var(--hairline); }
 
-    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-      .glass-cta { background: hsl(0 0% 100% / 0.7); }
-      .glass-cta:hover { background: hsl(0 0% 100% / 0.85); }
-    }
+.pathway-row {
+  display: grid;
+  grid-template-columns: 50px 130px 1fr 30px;
+  gap: 24px;
+  padding: 22px 0;
+  align-items: baseline;
+  transition: padding-left 220ms cubic-bezier(.2,.6,.2,1);
+}
+.pathway-row:hover { padding-left: 8px; }
 
-    .channels {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      margin-bottom: 96px;
-    }
+.pathway-row .num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--obsidian);
+}
 
-    .channel-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      line-height: 1.2;
-      letter-spacing: 0.12em;
-      color: var(--bone);
-      margin-bottom: 10px;
-    }
+.pathway-row .name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--obsidian);
+}
 
-    .channel-value {
-      font-family: var(--font-display);
-      font-size: 22px;
-      line-height: 1.2;
-      letter-spacing: -0.018em;
-      color: var(--bone);
-    }
+.pathway-row .desc {
+  font-size: 16px;
+  letter-spacing: -0.005em;
+  color: var(--ash);
+  font-style: italic;
+}
 
-    a.channel-value:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      text-decoration-thickness: 1px;
-    }
+.pathway-row .arrow {
+  font-family: var(--font-mono);
+  color: var(--obsidian);
+  text-align: right;
+  transition: transform 220ms cubic-bezier(.2,.6,.2,1);
+}
+.pathway-row:hover .arrow { transform: translateX(8px); }
 
-    .note {
-      font-family: var(--font-display);
-      font-size: 14px;
-      line-height: 1.55;
-      letter-spacing: -0.005em;
-      color: var(--bone);
-      opacity: 0.6;
-      margin: 0;
-      max-width: 60ch;
-    }
+.contact-direct {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin: 0 0 8px;
+}
 
-    /* Index footer ---------------------------------------------------------- */
-    .index {
-      border-top: 1px solid var(--iron);
-      padding-top: 24px;
-      margin-top: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
+.contact-email {
+  font-size: 18px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 4px;
+  letter-spacing: -0.005em;
+  display: inline-block;
+}
+.contact-email:hover { border-bottom-color: var(--obsidian); }
 
-    .index-item {
-      padding: 0 20px;
-      border-right: 1px solid var(--iron);
-    }
-    .index-item:first-child { padding-left: 0; }
-    .index-item:last-child { padding-right: 0; border-right: none; }
+@keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
+@media (prefers-reduced-motion: reduce) { body { animation: none; } }
 
-    .index-num {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-
-    .index-title {
-      font-size: 13px;
-      color: var(--ash);
-      letter-spacing: -0.005em;
-      display: block;
-      transition: color 120ms ease;
-    }
-
-    .index-item a:hover .index-title,
-    .index-item a:hover .index-num { color: var(--bone); }
-
-    /* Current page state */
-    .index-item.current .index-num,
-    .index-item.current .index-title { color: var(--bone); }
-
-    .index-item.current a[aria-current] {
-      pointer-events: none;
-    }
-
-    /* Responsive ------------------------------------------------------------ */
-    @media (max-width: 800px) {
-      body { padding: 32px 24px; }
-      header { margin-bottom: 48px; }
-      .address { font-size: 36px; }
-      .channel-value { font-size: 18px; }
-      .note { font-size: 13px; }
-      .index {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px 0;
-        margin-top: 40px;
-      }
-      .index-item:nth-child(2) { border-right: none; padding-right: 0; }
-      .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
-    }
-
-    @media (max-width: 640px) {
-      .glass-pair { grid-template-columns: 1fr; gap: 12px; }
-      .glass-cta { min-height: 160px; padding: 22px; }
-      .glass-cta-header { font-size: 13px; }
-      .glass-cta-title { font-size: 20px; }
-    }
-
-    @media (max-width: 480px) {
-      .channels { grid-template-columns: 1fr; gap: 18px; }
-    }
-
-    @media (max-width: 420px) {
-      .index { grid-template-columns: 1fr; }
-      .index-item {
-        padding: 16px 0;
-        border-right: none !important;
-        border-bottom: 1px solid var(--iron);
-      }
-      .index-item:last-child { border-bottom: none; }
-    }
-
-    /* Page transition ------------------------------------------------------- */
-    @view-transition { navigation: auto; }
-    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1); }
-    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
-    body { animation: pageFadeIn 200ms cubic-bezier(0.2, 0.6, 0.2, 1); }
-    @supports (view-transition-name: none) { body { animation: none; } }
-    @media (prefers-reduced-motion: reduce) { body { animation: none; } }
-    .lockup-text .lockup-s { position: relative; display: inline-block; }
-    .lockup-text .lockup-s::before { content: ""; position: absolute; top: 0.32em; left: 50%; transform: translateX(-50%); width: 0.075em; height: 0.13em; background: currentColor; }
-    /* Inverted palette */
-    body { --bone: #0A0A0B; --obsidian: #F2F0E8; --iron: #D6D4CD; --ash: #0A0A0B; }
-
+@media (max-width: 720px) {
+  body { padding: 24px 20px; }
+  .site-header { margin-bottom: 56px; }
+  .stamp { font-size: 10px; }
+  .pathways-title { font-size: 22px; }
+  .pathway-row { grid-template-columns: 36px 96px 1fr 20px; gap: 12px; padding: 16px 0; }
+  .pathway-row .desc { display: none; }
+  .pathway-row:hover { padding-left: 0; }
+  .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
+  .index-item { padding-right: 12px; }
+  .index-item:nth-child(odd) { padding-right: 0; }
+}
   </style>
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <a href="index.html" class="lockup" aria-label="Stodashi home">
-      <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="40" height="40" />
-      <span class="lockup-text"><span class="lockup-s">s</span>todashi</span>
+      <span class="lockup-mark" aria-hidden="true">[s]</span>
+      <span class="lockup-text">stodashi</span>
     </a>
-    <div class="section-stamp">CONTACT / 03</div>
+    <div class="stamp">
+      <span id="local-time">LDN &mdash;:&mdash;</span><br />
+      <a href="mailto:contact@stodashi.com">contact@stodashi.com</a>
+    </div>
   </header>
 
   <main>
-    <section aria-label="Contact">
-      <p class="address">By appointment.</p>
-      <p class="note">We answer correspondence we can act on.</p>
-      <p class="city">London &mdash; United Kingdom</p>
+    <div class="section-meta">
+      <span>Contact</span>
+      <span>03 / 04</span>
+    </div>
 
-      <hr class="address-divider" />
+    <section class="pathways-wrap" aria-label="Contact">
+      <h1 class="pathways-title">By appointment.</h1>
 
-      <div class="glass-pair">
-        <a href="engage.html" class="glass-cta glass-cta--engage" aria-label="Engage Stodashi to build an original platform">
-          <div class="glass-cta-header">
-            <span class="glass-cta-num"><em>01</em> &middot; ENGAGE</span>
-            <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
-          </div>
-          <div class="glass-cta-body">
-            <h3 class="glass-cta-title">Original build</h3>
-            <p class="glass-cta-desc">Have us build something.</p>
-          </div>
-        </a>
-        <a href="connect.html" class="glass-cta glass-cta--connect" aria-label="Plug your records into Stodashi data architecture">
-          <div class="glass-cta-header">
-            <span class="glass-cta-num"><em>02</em> &middot; CONNECT</span>
-            <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
-          </div>
-          <div class="glass-cta-body">
-            <h3 class="glass-cta-title">Plug in</h3>
-            <p class="glass-cta-desc">Bring your records onto our architecture.</p>
-          </div>
-        </a>
-        <a href="divest.html" class="glass-cta glass-cta--divest" aria-label="Divest your software business to Stodashi">
-          <div class="glass-cta-header">
-            <span class="glass-cta-num"><em>03</em> &middot; DIVEST</span>
-            <span class="glass-cta-arrow" aria-hidden="true">&rarr;</span>
-          </div>
-          <div class="glass-cta-body">
-            <h3 class="glass-cta-title">Sell to us</h3>
-            <p class="glass-cta-desc">Sell us a software business worth keeping.</p>
-          </div>
-        </a>
-      </div>
+      <ul class="pathways">
+        <li>
+          <a href="engage.html" class="pathway-row" aria-label="Engage — commission a build">
+            <span class="num">01</span>
+            <span class="name">Engage</span>
+            <span class="desc">commission a build</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="connect.html" class="pathway-row" aria-label="Connect — plug records into the architecture">
+            <span class="num">02</span>
+            <span class="name">Connect</span>
+            <span class="desc">plug records into the architecture</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="divest.html" class="pathway-row" aria-label="Divest — sell us software, data, or both">
+            <span class="num">03</span>
+            <span class="name">Divest</span>
+            <span class="desc">sell us software, data, or both</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      </ul>
 
-      <div class="channels">
-        <div class="channel">
-          <div class="channel-label">EMAIL</div>
-          <a href="mailto:contact@stodashi.com" class="channel-value">contact@stodashi.com</a>
-        </div>
-      </div>
+      <p class="contact-direct">Direct correspondence</p>
+      <a href="mailto:contact@stodashi.com" class="contact-email">contact@stodashi.com</a>
     </section>
   </main>
 
   <nav class="index" aria-label="Sections">
     <div class="index-item">
-      <a href="mandate.html">
-        <div class="index-num">01</div>
-        <span class="index-title">Mandate</span>
-      </a>
+      <a href="mandate.html"><span class="num">01</span><span class="name">Mandate</span></a>
     </div>
     <div class="index-item">
-      <a href="approach.html">
-        <div class="index-num">02</div>
-        <span class="index-title">Approach</span>
-      </a>
+      <a href="vision.html"><span class="num">02</span><span class="name">Vision</span></a>
     </div>
     <div class="index-item current">
-      <a href="contact.html" aria-current="page">
-        <div class="index-num">03 &middot;</div>
-        <span class="index-title">Contact</span>
-      </a>
+      <a href="contact.html" aria-current="page"><span class="num">03</span><span class="name">Contact</span></a>
     </div>
     <div class="index-item">
-      <a href="legal.html">
-        <div class="index-num">04</div>
-        <span class="index-title">Legal</span>
-      </a>
+      <a href="legal.html"><span class="num">04</span><span class="name">Legal</span></a>
     </div>
   </nav>
+
+  <script>
+    (function () {
+      var el = document.getElementById('local-time');
+      if (!el) return;
+      var fmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/London',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      });
+      function tick() { el.textContent = 'LDN ' + fmt.format(new Date()); }
+      tick();
+      setInterval(tick, 60000);
+    })();
+  </script>
 </body>
 </html>

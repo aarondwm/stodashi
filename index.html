@@ -4,232 +4,206 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>stodashi</title>
-  <meta name="description" content="Stodashi makes software for institutions and acquires the records that run on it." />
+  <meta name="description" content="Operating today's software. Building tomorrow's." />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/stodashi-logo.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --obsidian: #0A0A0B;
-      --graphite: #1A1A1C;
-      --bone: #F2F0E8;
-      --ash: #8C8C8F;
-      --iron: #2A2A2D;
-      --oxblood: #791F1F;
+/* ==========================================================================
+   stodashi — stylesheet
+   Light cream background, dark text, hairline rules, mono accents.
+   No shadows, no gradients, no rounded corners >2px.
+   ========================================================================== */
 
-      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
-    }
+:root {
+  --obsidian: #0A0A0B;
+  --bone: #F2F0E8;
+  --ash: #6E6E70;
+  --hairline: #D6D4CD;
+  --oxblood: #791F1F;
 
-    *, *::before, *::after { box-sizing: border-box; }
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--obsidian);
-      color: var(--bone);
-      font-family: var(--font-display);
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 48px 64px 32px;
-    }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-    a { color: inherit; text-decoration: none; transition: color 120ms ease; }
+body {
+  background: var(--bone);
+  color: var(--obsidian);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 48px 24px;
+}
 
-    /* Header ---------------------------------------------------------------- */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 80px;
-    }
+a { color: inherit; text-decoration: none; transition: color 200ms ease, border-color 200ms ease; }
+::selection { background: var(--obsidian); color: var(--bone); }
 
-    .lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
+/* ==========================================================================
+   Site header — same on every page
+   ========================================================================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 88px;
+}
 
-    .lockup-mark {
-      width: 40px;
-      height: 40px;
-      display: block;
-    }
+.lockup { display: inline-flex; align-items: center; gap: 12px; }
 
-    .lockup-text {
-      font-size: 22px;
-      letter-spacing: -0.005em;
-      color: var(--bone);
-    }
+.lockup-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--oxblood);
+  color: var(--bone);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1;
+}
 
-    .stamp {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--bone);
-      text-align: right;
-      letter-spacing: 0.04em;
-      line-height: 1.6;
-    }
-    .stamp a { color: inherit; transition: color 120ms ease; }
-    .stamp a:hover { color: var(--bone); }
+.lockup-text { font-size: 17px; letter-spacing: -0.005em; color: var(--obsidian); }
 
-    /* Hero ------------------------------------------------------------------ */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding-bottom: 14vh;
-    }
+.stamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--obsidian);
+}
+.stamp a:hover { color: var(--obsidian); }
 
-    .hero {
-      font-size: 56px;
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-      color: var(--bone);
-      max-width: 880px;
-      margin: 0;
-      font-weight: 400;
-    }
+main { flex: 1; display: flex; flex-direction: column; }
 
-    .hero .line { display: block; opacity: 0; }
-    .hero .second { color: var(--ash); }
+/* ==========================================================================
+   Bottom-edge index — same on every page
+   ========================================================================== */
+.index {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hairline);
+  padding-top: 18px;
+}
+.index-item { padding-right: 24px; }
+.index-item .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--obsidian);
+  margin-bottom: 4px;
+  display: block;
+}
+.index-item .name { font-size: 13px; letter-spacing: -0.005em; color: var(--obsidian); }
+.index-item.current a { pointer-events: none; }
+.index-item.current .num::after { content: '  ·'; }
 
-    @keyframes heroLineIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero .line-1 { animation: heroLineIn 720ms cubic-bezier(0.2, 0.7, 0.2, 1) 250ms forwards; }
-    .hero .line-2 { animation: heroLineIn 720ms cubic-bezier(0.2, 0.7, 0.2, 1) 1050ms forwards; }
-    @media (prefers-reduced-motion: reduce) {
-      .hero .line { opacity: 1; animation: none; }
-    }
+/* ==========================================================================
+   PAGE: Lobby (index) — single statement, vertically centered, lots of air
+   ========================================================================== */
+.lobby {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 4vh 0 8vh;
+}
 
-    /* Index footer ---------------------------------------------------------- */
-    .index {
-      border-top: 1px solid var(--iron);
-      padding-top: 24px;
-      margin-top: 80px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .index-item { padding: 0 20px; border-right: 1px solid var(--iron); }
-    .index-item:first-child { padding-left: 0; }
-    .index-item:last-child { padding-right: 0; border-right: none; }
-    .index-item a { display: block; }
-    .index-num {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ash);
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-      transition: color 120ms ease;
-    }
-    .index-title {
-      font-size: 13px;
-      color: var(--ash);
-      letter-spacing: -0.005em;
-      display: block;
-      transition: color 120ms ease;
-    }
-    .index-item a:hover .index-num,
-    .index-item a:hover .index-title { color: var(--bone); }
+.lobby-statement {
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin: 0;
+  max-width: 18ch;
+}
 
-    @media (max-width: 720px) {
-      body { padding: 32px 24px; }
-      header { margin-bottom: 56px; }
-      .hero { font-size: 26px; }
-      .index {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px 0;
-        margin-top: 56px;
-      }
-      .index-item:nth-child(2) { border-right: none; padding-right: 0; }
-      .index-item:nth-child(3) { padding-left: 0; border-right: 1px solid var(--iron); }
-      .index-item:nth-child(4) { padding-right: 0; border-right: none; }
-    }
+.lobby-statement .second { color: var(--ash); display: block; }
 
-    @media (max-width: 420px) {
-      .index { grid-template-columns: 1fr; }
-      .index-item {
-        padding: 16px 0;
-        border-right: none !important;
-        border-bottom: 1px solid var(--iron);
-      }
-      .index-item:last-child { border-bottom: none; }
-    }
+/* ==========================================================================
+   Page transition fade
+   ========================================================================== */
+@keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
+@media (prefers-reduced-motion: reduce) { body { animation: none; } }
 
-    /* Page transition ------------------------------------------------------- */
-    @view-transition { navigation: auto; }
-    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1); }
-    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
-    body { animation: pageFadeIn 200ms cubic-bezier(0.2, 0.6, 0.2, 1); }
-    @supports (view-transition-name: none) { body { animation: none; } }
-    @media (prefers-reduced-motion: reduce) { body { animation: none; } }
-    .lockup-text .lockup-s { position: relative; display: inline-block; }
-    .lockup-text .lockup-s::before { content: ""; position: absolute; top: 0.32em; left: 50%; transform: translateX(-50%); width: 0.075em; height: 0.13em; background: currentColor; }
-    /* Inverted palette */
-    body { --bone: #0A0A0B; --obsidian: #F2F0E8; --iron: #D6D4CD; --ash: #0A0A0B; }
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 720px) {
+  body { padding: 24px 20px; }
+  .site-header { margin-bottom: 56px; }
+  .stamp { font-size: 10px; }
+
+  .lobby-statement { font-size: 26px; max-width: 16ch; }
+
+  .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
+  .index-item { padding-right: 12px; }
+  .index-item:nth-child(odd) { padding-right: 0; }
+}
   </style>
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <a href="index.html" class="lockup" aria-label="Stodashi home">
-      <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="40" height="40" />
-      <span class="lockup-text"><span class="lockup-s">s</span>todashi</span>
+      <span class="lockup-mark" aria-hidden="true">[s]</span>
+      <span class="lockup-text">stodashi</span>
     </a>
     <div class="stamp">
-      <span id="local-time">LDN --:--</span><br />
+      <span id="local-time">LDN &mdash;:&mdash;</span><br />
       <a href="mailto:contact@stodashi.com">contact@stodashi.com</a>
     </div>
   </header>
 
   <main>
-    <h1 class="hero">
-      <span class="line line-1">We make the software.</span>
-      <span class="line line-2 second">We keep the records.</span>
-    </h1>
+    <section class="lobby" aria-label="Statement">
+      <h1 class="lobby-statement">
+        Operating today&rsquo;s software.<span class="second">Building tomorrow&rsquo;s.</span>
+      </h1>
+    </section>
   </main>
 
   <nav class="index" aria-label="Sections">
     <div class="index-item">
-      <a href="mandate.html">
-        <div class="index-num">01</div>
-        <span class="index-title">Mandate</span>
-      </a>
+      <a href="mandate.html"><span class="num">01</span><span class="name">Mandate</span></a>
     </div>
     <div class="index-item">
-      <a href="approach.html">
-        <div class="index-num">02</div>
-        <span class="index-title">Approach</span>
-      </a>
+      <a href="vision.html"><span class="num">02</span><span class="name">Vision</span></a>
     </div>
     <div class="index-item">
-      <a href="contact.html">
-        <div class="index-num">03</div>
-        <span class="index-title">Contact</span>
-      </a>
+      <a href="contact.html"><span class="num">03</span><span class="name">Contact</span></a>
     </div>
     <div class="index-item">
-      <a href="legal.html">
-        <div class="index-num">04</div>
-        <span class="index-title">Legal</span>
-      </a>
+      <a href="legal.html"><span class="num">04</span><span class="name">Legal</span></a>
     </div>
   </nav>
-  <script src="/time.js" defer></script>
+
+  <script>
+    (function () {
+      var el = document.getElementById('local-time');
+      if (!el) return;
+      var fmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/London',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      });
+      function tick() { el.textContent = 'LDN ' + fmt.format(new Date()); }
+      tick();
+      setInterval(tick, 60000);
+    })();
+  </script>
 </body>
 </html>

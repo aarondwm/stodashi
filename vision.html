@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mandate &mdash; stodashi</title>
-  <meta name="description" content="The firm's mandate in software and data." />
+  <title>Vision &mdash; stodashi</title>
+  <meta name="description" content="Where institutional intelligence accumulates." />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/stodashi-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -112,60 +112,42 @@ main { flex: 1; display: flex; flex-direction: column; }
 .index-item.current a { pointer-events: none; }
 .index-item.current .num::after { content: '  ·'; }
 
-.mandate-diptych {
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 56px;
-  max-width: 1000px;
-  padding-bottom: 36px;
+.vision-wrap {
+  max-width: 760px;
+  padding-bottom: 96px;
 }
 
-.mandate-diptych .col-divider {
-  background: var(--hairline);
-  width: 1px;
-  align-self: stretch;
-}
-
-.mandate-section {
-  display: flex;
-  flex-direction: column;
-  max-width: 42ch;
-}
-
-.mandate-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ash);
-  margin: 0 0 18px;
-}
-
-.mandate-section h2 {
-  font-size: 36px;
+.vision-title {
+  font-size: 22px;
   font-weight: 400;
+  letter-spacing: -0.012em;
+  margin: 0 0 40px;
+}
+
+.vision-lead {
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
   letter-spacing: -0.022em;
-  line-height: 1.1;
-  margin: 0 0 32px;
+  font-weight: 400;
+  margin: 0 0 40px;
+  max-width: 22ch;
 }
 
-.mandate-section p {
+.vision-body {
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.7;
   letter-spacing: -0.005em;
-  margin: 0;
+  margin: 0 0 56px;
+  max-width: 56ch;
 }
 
-.mandate-note {
+.vision-coda {
   font-family: var(--font-mono);
   font-size: 12px;
   font-style: italic;
   letter-spacing: 0.04em;
   color: var(--ash);
-  margin: 32px 0 96px;
-  max-width: 1000px;
-  border-top: 1px solid var(--hairline);
-  padding-top: 18px;
+  margin: 0;
 }
 
 @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -177,9 +159,8 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
   .site-header { margin-bottom: 56px; }
   .stamp { font-size: 10px; }
 
-  .mandate-diptych { grid-template-columns: 1fr; gap: 48px; }
-  .mandate-diptych .col-divider { width: 100%; height: 1px; }
-  .mandate-section h2 { font-size: 28px; }
+  .vision-lead { font-size: 24px; }
+  .vision-body { font-size: 16px; }
 
   .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
   .index-item { padding-right: 12px; }
@@ -201,35 +182,24 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
 
   <main>
     <div class="section-meta">
-      <span>Mandate</span>
-      <span>01 / 04</span>
+      <span>Vision</span>
+      <span>02 / 04</span>
     </div>
 
-    <section class="mandate-diptych" aria-label="Mandate">
-      <div class="mandate-section">
-        <p class="mandate-label">&mdash; Software</p>
-        <h2>Built, bought, operated.</h2>
-        <p>The firm builds platforms and operates them. The firm acquires software businesses and runs them under their existing operators. Both feed the same architecture.</p>
-      </div>
-
-      <div class="col-divider" aria-hidden="true"></div>
-
-      <div class="mandate-section">
-        <p class="mandate-label">&mdash; Data</p>
-        <h2>Captured and consolidated.</h2>
-        <p>Intelligence reaches the firm through the platforms it operates, the institutions that produce records, and the businesses it acquires. All flows to one place.</p>
-      </div>
+    <section class="vision-wrap" aria-label="Vision">
+      <h1 class="vision-title">Vision.</h1>
+      <p class="vision-lead">Institutional intelligence is the firm&rsquo;s asset.</p>
+      <p class="vision-body">Built platforms generate it. Acquired businesses bring it. Connected institutions feed it. Each addition refines what the rest can do.</p>
+      <p class="vision-coda">The firm intends to be where it accumulates.</p>
     </section>
-
-    <p class="mandate-note">An acquisition may be of software, data, or both &mdash; a company and its records, the records alone, or the company alone.</p>
   </main>
 
   <nav class="index" aria-label="Sections">
-    <div class="index-item current">
-      <a href="mandate.html" aria-current="page"><span class="num">01</span><span class="name">Mandate</span></a>
-    </div>
     <div class="index-item">
-      <a href="vision.html"><span class="num">02</span><span class="name">Vision</span></a>
+      <a href="mandate.html"><span class="num">01</span><span class="name">Mandate</span></a>
+    </div>
+    <div class="index-item current">
+      <a href="vision.html" aria-current="page"><span class="num">02</span><span class="name">Vision</span></a>
     </div>
     <div class="index-item">
       <a href="contact.html"><span class="num">03</span><span class="name">Contact</span></a>
