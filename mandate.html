@@ -100,6 +100,14 @@ main { flex: 1; display: flex; flex-direction: column; }
 .index-item.current a { pointer-events: none; }
 .index-item.current .num::after { content: '  ·'; }
 
+.mandate-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
 .mandate-diptych {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
@@ -107,9 +115,6 @@ main { flex: 1; display: flex; flex-direction: column; }
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
-  flex: 1;
-  align-items: center;
-  padding-bottom: 0;
 }
 
 .mandate-diptych .col-divider {
@@ -210,23 +215,25 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
       <span>01 / 04</span>
     </div>
 
-    <section class="mandate-diptych" aria-label="Mandate">
-      <div class="mandate-section">
-        <p class="mandate-label">&mdash; Software</p>
-        <h2>Built, bought, operated.</h2>
-        <p>We build platforms and operate them. We acquire software businesses and let their operators keep running them. Both feed the same architecture.</p>
-      </div>
+    <div class="mandate-stage">
+      <section class="mandate-diptych" aria-label="Mandate">
+        <div class="mandate-section">
+          <p class="mandate-label">&mdash; Software</p>
+          <h2>Built, bought, operated.</h2>
+          <p>We build platforms and operate them. We acquire software businesses and let their operators keep running them. Both feed the same architecture.</p>
+        </div>
 
-      <div class="col-divider" aria-hidden="true"></div>
+        <div class="col-divider" aria-hidden="true"></div>
 
-      <div class="mandate-section">
-        <p class="mandate-label">&mdash; Data</p>
-        <h2>Captured and consolidated.</h2>
-        <p>Intelligence reaches us through the platforms we operate, the institutions that produce records, and the businesses we acquire. All of it flows to one place.</p>
-      </div>
-    </section>
+        <div class="mandate-section">
+          <p class="mandate-label">&mdash; Data</p>
+          <h2>Captured and consolidated.</h2>
+          <p>Intelligence reaches us through the platforms we operate, the institutions that produce records, and the businesses we acquire. All of it flows to one place.</p>
+        </div>
+      </section>
 
-    <p class="mandate-note">An acquisition may be of software, data, or both &mdash; a company and its records, the records alone, or the company alone.</p>
+      <p class="mandate-note">An acquisition may be of software, data, or both &mdash; a company and its records, the records alone, or the company alone.</p>
+    </div>
   </main>
 
   <nav class="index" aria-label="Sections">
