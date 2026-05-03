@@ -104,7 +104,7 @@ main { flex: 1; display: flex; flex-direction: column; }
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
   gap: 56px;
-  max-width: 1000px;
+  max-width: 1120px;
   width: 100%;
   margin: 0 auto;
   padding-bottom: 36px;
@@ -121,49 +121,49 @@ main { flex: 1; display: flex; flex-direction: column; }
   grid-template-rows: auto auto auto;
   justify-items: center;
   text-align: center;
-  max-width: 42ch;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .mandate-label {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ash);
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 
 .mandate-section h2 {
-  font-size: clamp(24px, 2.6vw, 32px);
+  font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.022em;
   line-height: 1.2;
-  margin: 0 0 26px;
+  margin: 0 0 28px;
   max-width: 100%;
   white-space: nowrap;
 }
 
 .mandate-section p {
-  font-size: 16px;
-  line-height: 1.7;
-  letter-spacing: -0.004em;
+  font-size: 22px;
+  line-height: 1.6;
+  letter-spacing: -0.008em;
   margin: 0;
-  max-width: 40ch;
+  max-width: 100%;
 }
 
 .mandate-note {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  letter-spacing: 0.02em;
   color: var(--ash);
   margin: 32px auto 96px;
-  max-width: 720px;
+  max-width: 820px;
   width: 100%;
   text-align: center;
   border-top: 1px solid var(--hairline);
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
 @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -178,8 +178,9 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
   .mandate-diptych { grid-template-columns: 1fr; gap: 48px; }
   .mandate-diptych .col-divider { width: 100%; height: 1px; }
   .mandate-section h2 { font-size: 24px; white-space: normal; }
-  .mandate-section p { font-size: 15px; }
+  .mandate-section p { font-size: 16px; }
   .mandate-label { font-size: 12px; }
+  .mandate-note { font-size: 13px; }
 
   .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
   .index-item { padding-right: 12px; }
