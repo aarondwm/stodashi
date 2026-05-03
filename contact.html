@@ -106,7 +106,7 @@ main { flex: 1; display: flex; flex-direction: column; }
 }
 
 .pathways-title {
-  font-size: 32px;
+  font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 400;
   letter-spacing: -0.022em;
   margin: 0 0 56px;
@@ -124,7 +124,7 @@ main { flex: 1; display: flex; flex-direction: column; }
 
 .pathway-row {
   display: grid;
-  grid-template-columns: 50px 130px 1fr 30px;
+  grid-template-columns: 56px 150px 1fr 32px;
   gap: 24px;
   padding: 22px 0;
   align-items: baseline;
@@ -134,21 +134,21 @@ main { flex: 1; display: flex; flex-direction: column; }
 
 .pathway-row .num {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   color: var(--obsidian);
 }
 
 .pathway-row .name {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: 14px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--obsidian);
 }
 
 .pathway-row .desc {
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.005em;
   color: var(--ash);
   font-style: italic;
@@ -156,6 +156,7 @@ main { flex: 1; display: flex; flex-direction: column; }
 
 .pathway-row .arrow {
   font-family: var(--font-mono);
+  font-size: 14px;
   color: var(--obsidian);
   text-align: right;
   transition: transform 220ms cubic-bezier(.2,.6,.2,1);
@@ -164,15 +165,15 @@ main { flex: 1; display: flex; flex-direction: column; }
 
 .contact-direct {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 14px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ash);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .contact-email {
-  font-size: 18px;
+  font-size: 22px;
   border-bottom: 1px solid var(--hairline);
   padding-bottom: 4px;
   letter-spacing: -0.005em;
@@ -188,10 +189,14 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
   body { padding: 24px 20px; }
   .site-header { margin-bottom: 56px; }
   .stamp { font-size: 10px; }
-  .pathways-title { font-size: 22px; }
-  .pathway-row { grid-template-columns: 36px 96px 1fr 20px; gap: 12px; padding: 16px 0; }
+  .pathways-title { font-size: 24px; }
+  .pathway-row { grid-template-columns: 36px 110px 1fr 20px; gap: 12px; padding: 16px 0; }
+  .pathway-row .num { font-size: 12px; }
+  .pathway-row .name { font-size: 12px; }
   .pathway-row .desc { display: none; }
   .pathway-row:hover { padding-left: 0; }
+  .contact-direct { font-size: 12px; }
+  .contact-email { font-size: 18px; }
   .index { grid-template-columns: 1fr 1fr; gap: 18px 0; }
   .index-item { padding-right: 12px; }
   .index-item:nth-child(odd) { padding-right: 0; }
