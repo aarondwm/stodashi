@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 32px 48px 24px;
+  padding: 24px 48px 24px;
 }
 
 a { color: inherit; text-decoration: none; transition: color 200ms ease, border-color 200ms ease; }
@@ -45,26 +45,14 @@ a { color: inherit; text-decoration: none; transition: color 200ms ease, border-
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 88px;
+  margin-bottom: 48px;
 }
 
 .lockup { display: inline-flex; align-items: center; gap: 12px; }
 
-.lockup-mark {
-  width: 28px;
-  height: 28px;
-  background: var(--oxblood);
-  color: var(--bone);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 1;
-}
+.lockup-mark { width: 40px; height: 40px; display: block; }
 
-.lockup-text { font-size: 17px; letter-spacing: -0.005em; color: var(--obsidian); }
+.lockup-text { font-size: 22px; letter-spacing: -0.005em; color: var(--obsidian); }
 
 .stamp {
   font-family: var(--font-mono);
@@ -208,13 +196,15 @@ body { animation: pageFadeIn 240ms cubic-bezier(.2,.6,.2,1); }
   .index-item { padding-right: 12px; }
   .index-item:nth-child(odd) { padding-right: 0; }
 }
+    .lockup-text .lockup-s { position: relative; display: inline-block; }
+    .lockup-text .lockup-s::before { content: ""; position: absolute; top: 0.32em; left: 50%; transform: translateX(-50%); width: 0.075em; height: 0.13em; background: currentColor; }
   </style>
 </head>
 <body>
   <header class="site-header">
     <a href="index.html" class="lockup" aria-label="Stodashi home">
-      <span class="lockup-mark" aria-hidden="true">[s]</span>
-      <span class="lockup-text">stodashi</span>
+      <img src="/assets/stodashi-logo.png" alt="" class="lockup-mark" width="40" height="40" />
+      <span class="lockup-text"><span class="lockup-s">s</span>todashi</span>
     </a>
     <div class="stamp">
       <span id="local-time">LDN &mdash;:&mdash;</span><br />
